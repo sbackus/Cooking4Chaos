@@ -5,7 +5,7 @@ S''
 p2
 sS'saveDestination'
 p3
-S'E:\\Git\\LudumDare\\LudumDare33\\Cooking4Chaos\\cooking4chaos.tws'
+S'C:\\Users\\Dave\\Documents\\GitHub\\Cooking4Chaos\\cooking4chaos.tws'
 p4
 sS'metadata'
 p5
@@ -37,7 +37,7 @@ p18
 (dp20
 S'text'
 p21
-V<<silently>>\u000a<<messages>>\u000a<<rng>>\u000a<<endsilently>>You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<if $cooking is 0>>You decide to try something new - cooking. Maybe that will help you relax.<<else if $cooking lt 5>>You decide to try cooking again.<<else>>What will you cook tonight?<<endif>>\u000a\u000a<<display cookies>><<if $chocolate_recipe is true>>\u000a\u000a<<display chocolate>><<endif>><<if $caramel_recipe is true>>\u000a\u000a<<display caramel>><<endif>><<if $cooking gt 4>><<if $chocolate_recipe is false>>\u000a<<display new>><<else if $rng gt 3>><<if $caramel_recipe is false>>\u000a[[Maybe you'll try something new...|new]]<<endif>><<endif>><<endif>>\u000a\u000a<<if $cookies_made>>Cookies: <<$cookies>><<endif>><<if $chocolate_made>>\u000aChocolate: <<$chocolate>><<endif>><<if $caramel_made>>\u000aCaramel: <<$caramel>><<endif>>
+V<<silently>>\u000a<<messages>>\u000a<<rng>>\u000a<<set $mixing to []>>\u000a<<set $inventory to []>>\u000a<<display day>>\u000a<<endsilently>>It's <<$weekday>> night. You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<if $cooking is 0>>You decide to try something new - cooking. Maybe that will help you relax.<<else if $cooking lt 5>>You decide to try cooking again.<<else>>What will you cook tonight?<<endif>>\u000a\u000a[[Make cookies|cookies]]<<if $chocolate_recipe is true>>\u000a\u000a[[Make chocolate|chocolate]]<<endif>><<if $caramel_recipe is true>>\u000a\u000a[[Make caramel|caramel]]<<endif>><<if $chocolate_chip_cookies_recipe is true>>\u000a\u000a[[Make chocolate chip cookies|chocolate chip cookies]]<<endif>><<if $chocolate_caramels_recipe is true>>\u000a\u000a[[Make chocolate caramels|chocolate caramels]]<<endif>><<if $cooking gt 4>>\u000a<<if $chocolate_recipe is false>>\u000a[[Try something new...|new]]<<else if $random gt 3>><<if $caramel_recipe is false>>\u000a[[Try something new...|new]]<<endif>><<endif>><<endif>><<if ($cooking gt 10) and ($chocolate_made is true)>>\u000a[[Experiment...|experiment]]<<endif>><<if $cookies_made>>\u000a\u000aCookies: <<$cookies>><<endif>><<if $chocolate_made>>\u000aChocolate: <<$chocolate>><<endif>><<if $caramel_made>>\u000aCaramel: <<$caramel>><<endif>><<if $chocolate_chip_cookies_made>>\u000aChocolate Chip Cookies: <<$chocolate_chip_cookies>><<endif>><<if $chocolate_caramels_made>>\u000aChocolate Caramels: <<$chocolate_caramels>><<endif>>
 p22
 sS'title'
 p23
@@ -51,9 +51,9 @@ p26
 ((I2015
 I8
 I22
-I17
-I52
-I55
+I22
+I18
+I50
 I5
 I234
 I1
@@ -161,15 +161,15 @@ g14
 I00
 sg15
 (lp62
-F287.0
-aF10.0
+F190.0
+aF16.0
 asg17
 (itiddlywiki
 Tiddler
 p63
 (dp64
 g21
-V<<replace "Make cookies">><<if $cookies_made is false>>You're surprised at how much fun you have cooking! All your problems drift away; it's just you and the ingredients.<<set $cookies_made to true>><<else>>Cooking always makes you feel better.<<endif>>\u000a\u000a<<timedreplace 1s>>5<<becomes>>4<<becomes>>3<<becomes>>2<<becomes>>1<<becomes>>Mmm... good...<<timedgoto "Start" 1s>><<endtimedreplace>><<silently>>\u000a<<set $cookies += 1>>\u000a<<set $cooking += 1>><<endsilently>><<endreplace>>
+V<<set $cookies += 1>><<if $cookies_made is false>>You're surprised at how much fun you have cooking! All your problems drift away; it's just you and the ingredients.<<set $cookies_made to true>><<else>><<better>><<endif>>\u000a\u000a<<display cooldown>>
 p65
 sg23
 Vcookies
@@ -179,9 +179,9 @@ g26
 ((I2015
 I8
 I22
-I17
-I52
-I59
+I21
+I33
+I29
 I5
 I234
 I1
@@ -213,15 +213,15 @@ g14
 I00
 sg15
 (lp78
-F230.0
-aF145.0
+F190.0
+aF148.0
 asg17
 (itiddlywiki
 Tiddler
 p79
 (dp80
 g21
-V<<replace "Make chocolate">><<if $chocolate_made is false>>You whip up some homemade chocolate. You feel accomplished, and it takes your mind off things.<<set $chocolate_made to true>><<else>>Cooking always makes you feel better.<<endif>>\u000a\u000a<<timedreplace 1s>>5<<becomes>>4<<becomes>>3<<becomes>>2<<becomes>>1<<becomes>>Mmm... good...<<timedgoto "Start" 1s>><<endtimedreplace>><<silently>>\u000a<<set $chocolate += 1>>\u000a<<set $cooking += 1>><<endsilently>><<endreplace>>
+V<<set $chocolate += 1>><<if $chocolate_made is false>>You try some home-made chocolate...<<set $chocolate_made to true>><<else>><<display better>><<endif>>\u000a\u000a<<display cooldown>>\u000a\u000a
 p81
 sg23
 Vchocolate
@@ -231,9 +231,9 @@ g26
 ((I2015
 I8
 I22
-I17
-I53
-I9
+I21
+I24
+I37
 I5
 I234
 I1
@@ -317,15 +317,15 @@ g14
 I00
 sg15
 (lp110
-F191.0
-aF304.0
+F183.0
+aF295.0
 asg17
 (itiddlywiki
 Tiddler
 p111
 (dp112
 g21
-V<<if $caramel_made is false>>You experiment with making some caramel - you're pleased with the results! It's a pleasant contrast to the powerlessness that plagues you outside the kitchen.<<else>>Cooking always makes you feel better.<<endif>>\u000a\u000a<<timedreplace 1s>>5<<becomes>>4<<becomes>>3<<becomes>>2<<becomes>>1<<becomes>>Mmm... good...<<timedgoto "Start" 1s>><<endtimedreplace>><<silently>>\u000a<<set $caramel += 1>>\u000a<<set $cooking += 1>><<endsilently>>
+V<<set $caramel += 1>><<if $caramel_made is false>>You experiment with making some caramel...<<set $caramel_made to true>><<else>><<display better>>.<<endif>>\u000a\u000a<<display cooldown>>
 p113
 sg23
 Vcaramel
@@ -335,9 +335,9 @@ g26
 ((I2015
 I8
 I22
-I17
-I53
-I34
+I22
+I19
+I35
 I5
 I234
 I1
@@ -377,7 +377,7 @@ Tiddler
 p127
 (dp128
 g21
-V<<set $new_message to either("God. What a hard day.","Work was //brutal// today. You need to unwind.","You take a deep breath, trying to clear the stress of the day from your mind. You feel so overwhelmed...")>><<messagededuper>>
+V<<set $new_message to either("God. What a hard day.","Today was tough.","You need to unwind.", "You feel stressed out.","Your job was bad today.")>><<messagededuper>>
 p129
 sg23
 Vmessages
@@ -387,9 +387,9 @@ g26
 ((I2015
 I8
 I22
-I17
-I53
-I3
+I21
+I52
+I39
 I5
 I234
 I1
@@ -421,27 +421,27 @@ g14
 I00
 sg15
 (lp142
-I506
-aI434
+F14.0
+aF564.0
 asg17
 (itiddlywiki
 Tiddler
 p143
 (dp144
 g21
-VEvery day is spent out in the world, longing to go home, to shut the world out behind your apartment door.\u000a\u000a5...<<timedinsert 1s>>4...<<gains>>3...<<gains>>2...<<gains>>1...<<endtimedinsert>>\u000a\u000a<<timedgoto "Start" 5s>>\u000a
+V(function(){version.extensions.replaceMacrosCombined={major:1,minor:1,revision:7};var nullobj={handler:function(){}};function showVer(n,notrans){if(!n){return;}n.innerHTML="";\u000anew Wikifier(n,n.tweecode);n.setAttribute("data-enabled","true");n.style.display="inline";n.classList.remove("revision-span-out");if(!notrans){n.classList.add("revision-span-in");\u000aif(n.timeout){clearTimeout(n.timeout);}n.timeout=setTimeout(function(){n.classList.remove("revision-span-in");n=null;},20);}}function hideVer(n,notrans){if(!n){return;\u000a}n.setAttribute("data-enabled","false");n.classList.remove("revision-span-in");if(n.timeout){clearTimeout(n.timeout);}if(!notrans){n.classList.add("revision-span-out");\u000an.timeout=setTimeout(function(){if(n.getAttribute("data-enabled")=="false"){n.classList.remove("revision-span-out");n.style.display="none";n.innerHTML="";}n=null;\u000a},1000);}else{n.style.display="none";n.innerHTML="";n=null;}}function tagcontents(b,starttags,desttags,endtags,k){var l=0,c="",tg,a,i;function tagfound(i,e,endtag){for(var j=0;\u000aj<e.length;j++){if(a.indexOf("<<"+e[j]+(endtag?">>":""),i)==i){return e[j];}}}a=b.source.slice(k);for(i=0;i<a.length;i++){if(tg=tagfound(i,starttags)){l++;}else{if((tg=tagfound(i,desttags,true))&&l==0){b.nextMatch=k+i+tg.length+4;\u000areturn[c,tg];}else{if(tg=tagfound(i,endtags,true)){l--;if(l<0){return null;}}}}c+=a.charAt(i);}return null;}var begintags=[];var endtags=[];function revisionSpanHandler(g,e,f,b){var k=b.source.indexOf(">>",b.matchStart)+2,vsns=[],vtype=e,flen=f.length,becomes,c,cn,m,h,vsn;\u000afunction mkspan(vtype){h=insertElement(m,"span",null,"revision-span "+vtype);h.setAttribute("data-enabled",false);h.style.display="none";h.tweecode="";return h;}if(this.shorthand&&flen){while(f.length>0){vsns.push([f.shift(),(this.flavour=="insert"?"gains":"becomes")]);\u000a}}else{if(this.flavour=="insert"||(this.flavour=="continue"&&this.trigger=="time")){vsns.push(["","becomes"]);}}if(this.flavour=="continue"&&flen){b.nextMatch=k+b.source.slice(k).length;\u000avsns.push([b.source.slice(k),vtype]);}else{becomes=["becomes","gains"];c=tagcontents(b,begintags,becomes.concat(endtags),endtags,k);if(c&&endtags.indexOf(c[1])==-1){while(c){vsns.push(c);\u000ac=tagcontents(b,begintags,becomes,endtags,b.nextMatch);}c=tagcontents(b,begintags,["end"+e],endtags,b.nextMatch);}if(!c){throwError(g,"can't find matching end"+e);\u000areturn;}vsns.push(c);if(this.flavour=="continue"){k=b.nextMatch;b.nextMatch=k+b.source.slice(k).length;vsns.push([b.source.slice(k),""]);}}if(this.flavour=="remove"){vsns.push(["","becomes"]);\u000a}cn=0;m=insertElement(g,"span",null,e);m.setAttribute("data-flavour",this.flavour);h=mkspan("initial");vsn=vsns.shift();h.tweecode=vsn[0];showVer(h,true);while(vsns.length>0){if(vsn){vtype=vsn[1];\u000a}vsn=vsns.shift();h=mkspan(vtype);h.tweecode=vsn[0];}if(typeof this.setup=="function"){this.setup(m,g,f);}}function quantity(m){return(m.children.length-1)+(m.getAttribute("data-flavour")=="remove");\u000a}function revisionSetup(m,g,f){m.className+=" "+f[0].replace(" ","_");}function keySetup(m,g,f){var key=f[0];m.setEventListener("keydown",function l(e){var done=!revise("revise",m);\u000aif(done){m.removeEventListener("keydown",l);}});}function timeSetup(m,g,f){function cssTimeUnit(s){if(typeof s=="string"){if(s.slice(-2).toLowerCase()=="ms"){return Number(s.slice(0,-2))||0;\u000a}else{if(s.slice(-1).toLowerCase()=="s"){return Number(s.slice(0,-1))*1000||0;}}}throwError(g,s+" isn't a CSS time unit");return 0;}var tm=cssTimeUnit(f[0]);var s=state.history[0].passage.title;\u000asetTimeout(function timefn(){if(state.history[0].passage.title==s){var done=!revise("revise",m);if(!done){setTimeout(timefn,tm);}}},tm);}function hoverSetup(m){var fn,noMouseEnter=(document.head.onmouseenter!==null),m1=m.children[0],m2=m.children[1],gains=m2.className.indexOf("gains")>-1;\u000aif(!m1||!m2){return;}m1.onmouseenter=function(e){var efp=document.elementFromPoint(e.clientX,e.clientY);while(efp&&efp!==this){efp=efp.parentNode;}if(!efp){return;\u000a}if(this.getAttribute("data-enabled")!="false"){revise("revise",this.parentNode);}};m2.onmouseleave=function(e){var efp=document.elementFromPoint(e.clientX,e.clientY);\u000awhile(efp&&efp!==this){efp=efp.parentNode;}if(efp){return;}if(this.getAttribute("data-enabled")!="false"){revise("revert",this.parentNode);}};if(gains){m1.onmouseleave=m2.onmouseleave;\u000a}if(noMouseEnter){fn=function(n){return function(e){if(!event.relatedTarget||(event.relatedTarget!=this&&!(this.compareDocumentPosition(event.relatedTarget)&Node.DOCUMENT_POSITION_CONTAINED_BY))){this[n]();\u000a}};};m1.onmouseover=fn("onmouseenter");m2.onmouseout=fn("onmouseleave");if(gains){m1.onmouseout=m2.onmouseout;}}m=null;}function mouseSetup(m){var evt=(document.head.onmouseenter===null?"onmouseenter":"onmouseover");\u000am[evt]=function(){var done=!revise("revise",this);if(done){this[evt]=null;}};m=null;}function linkSetup(m,g,f){var l=Wikifier.createInternalLink(),p=m.parentNode;\u000al.className="internalLink replaceLink";p.insertBefore(l,m);l.insertBefore(m,null);l.onclick=function(){var p,done=false;if(m&&m.parentNode==this){done=!revise("revise",m);\u000ascrollWindowTo(m);}if(done){this.parentNode.insertBefore(m,this);this.parentNode.removeChild(this);}};l=null;}function visitedSetup(m,g,f){var i,done,shv=state.history[0].variables,os="once seen",d=(m.firstChild&&(this.flavour=="insert"?m.firstChild.nextSibling:m.firstChild).tweecode);\u000ashv[os]=shv[os]||{};if(d&&!shv[os].hasOwnProperty(d)){shv[os][d]=1;}else{for(i=shv[os][d];i>0&&!done;i--){done=!revise("revise",m,true);}if(shv[os].hasOwnProperty(d)){shv[os][d]+=1;\u000a}}}[{name:"insert",flavour:"insert",trigger:"link",setup:linkSetup},{name:"timedinsert",flavour:"insert",trigger:"time",setup:timeSetup},{name:"insertion",flavour:"insert",trigger:"revisemacro",setup:revisionSetup},{name:"later",flavour:"insert",trigger:"visited",setup:visitedSetup},{name:"keyinsert",flavour:"insert",trigger:"key",setup:keySetup},{name:"replace",flavour:"replace",trigger:"link",setup:linkSetup},{name:"timedreplace",flavour:"replace",trigger:"time",setup:timeSetup},{name:"mousereplace",flavour:"replace",trigger:"mouse",setup:mouseSetup},{name:"hoverreplace",flavour:"replace",trigger:"hover",setup:hoverSetup},{name:"revision",flavour:"replace",trigger:"revisemacro",setup:revisionSetup},{name:"keyreplace",flavour:"replace",trigger:"key",setup:keySetup},{name:"timedremove",flavour:"remove",trigger:"time",setup:timeSetup},{name:"mouseremove",flavour:"remove",trigger:"mouse",setup:mouseSetup},{name:"hoverremove",flavour:"remove",trigger:"hover",setup:hoverSetup},{name:"removal",flavour:"remove",trigger:"revisemacro",setup:revisionSetup},{name:"once",flavour:"remove",trigger:"visited",setup:visitedSetup},{name:"keyremove",flavour:"remove",trigger:"key",setup:keySetup},{name:"continue",flavour:"continue",trigger:"link",setup:linkSetup},{name:"timedcontinue",flavour:"continue",trigger:"time",setup:timeSetup},{name:"mousecontinue",flavour:"continue",trigger:"mouse",setup:mouseSetup},{name:"keycontinue",flavour:"continue",trigger:"key",setup:keySetup},{name:"cycle",flavour:"cycle",trigger:"revisemacro",setup:revisionSetup},{name:"mousecycle",flavour:"cycle",trigger:"mouse",setup:mouseSetup},{name:"timedcycle",flavour:"cycle",trigger:"time",setup:timeSetup},{name:"keycycle",flavour:"replace",trigger:"key",setup:keySetup}].forEach(function(e){e.handler=revisionSpanHandler;\u000ae.shorthand=(["link","mouse","hover"].indexOf(e.trigger)>-1);macros[e.name]=e;macros["end"+e.name]=nullobj;begintags.push(e.name);endtags.push("end"+e.name);});function insideDepartingSpan(elem){var r=elem.parentNode;\u000awhile(!r.classList.contains("passage")){if(r.classList.contains("revision-span-out")){return true;}r=r.parentNode;}}function reviseAll(rt,rname){var rall=document.querySelectorAll(".passage [data-flavour]."+rname),ret=false;\u000afor(var i=0;i<rall.length;i++){if(!insideDepartingSpan(rall[i])){ret=revise(rt,rall[i])||ret;}}return ret;}function revise(rt,r,notrans){var ind2,curr,next,ind=-1,rev=(rt=="revert"),rnd=(rt.indexOf("random")>-1),fl=r.getAttribute("data-flavour"),rc=r.childNodes,cyc=(fl=="cycle"),rcl=rc.length-1;\u000afunction doToGainerSpans(n,fn){for(var k=n-1;k>=0;k--){if(rc[k+1].classList.contains("gains")){fn(rc[k],notrans);}else{break;}}}for(var k=0;k<=rcl;k++){if(rc[k].getAttribute("data-enabled")=="true"){ind=k;\u000a}}if(rev){ind-=1;}curr=(ind>=0?rc[ind]:(cyc?rc[rcl]:null));ind2=ind;if(rnd){ind2=(ind+(Math.floor(Math.random()*rcl)))%rcl;}next=((ind2<rcl)?rc[ind2+1]:(cyc?rc[0]:null));\u000avar docurr=(rev?showVer:hideVer);var donext=(rev?hideVer:showVer);var currfn=function(){if(!(next&&next.classList.contains("gains"))||rnd){docurr(curr,notrans);doToGainerSpans(ind,docurr,notrans);\u000a}};var nextfn=function(){donext(next,notrans);if(rnd){doToGainerSpans(ind2+1,donext,notrans);}};if(!rev){currfn();nextfn();}else{nextfn();currfn();}return(cyc?true:(rev?(ind>0):(ind2<rcl-1)));\u000a}macros.revert=macros.revise=macros.randomise=macros.randomize={handler:function(a,b,c){var l,rev,rname;function disableLink(l){l.style.display="none";}function enableLink(l){l.style.display="inline";\u000a}function updateLink(l){if(l.className.indexOf("random")>-1){enableLink(l);return;}var rall=document.querySelectorAll(".passage [data-flavour]."+rname),cannext,canprev,i,ind,r,fl;\u000afor(i=0;i<rall.length;i++){r=rall[i],fl=r.getAttribute("data-flavour");if(insideDepartingSpan(r)){continue;}if(fl=="cycle"){cannext=canprev=true;}else{if(r.firstChild.getAttribute("data-enabled")==!1+""){canprev=true;\u000a}if(r.lastChild.getAttribute("data-enabled")==!1+""){cannext=true;}}}var can=(l.classList.contains("revert")?canprev:cannext);(can?enableLink:disableLink)(l);}function toggleText(w){w.classList.toggle(rl+"Enabled");\u000aw.classList.toggle(rl+"Disabled");w.style.display=((w.style.display=="none")?"inline":"none");}var rl="reviseLink";if(c.length<2){throwError(a,b+" macro needs 2 parameters");\u000areturn;}rname=c.shift().replace(" ","_");l=Wikifier.createInternalLink(a,null);l.className="internalLink "+rl+" "+rl+"_"+rname+" "+b;var v="";var end=false;var out=false;\u000aif(c.length>1&&c[0][0]=="$"){v=c[0].slice(1);c.shift();}switch(c[c.length-1]){case"end":end=true;c.pop();break;case"out":out=true;c.pop();break;}var h=state.history[0].variables;\u000afor(var i=0;i<c.length;i++){var on=(i==Math.max(c.indexOf(h[v]),0));var d=insertElement(null,"span",null,rl+((on)?"En":"Dis")+"abled");if(on){h[v]=c[i];l.setAttribute("data-cycle",i);\u000a}else{d.style.display="none";}insertText(d,c[i]);l.appendChild(d);}l.onclick=function(){reviseAll(b,rname);var t=this.childNodes,u=this.getAttribute("data-cycle")-0,m=t.length,n,lall,i;\u000aif((end||out)&&u>=m-(end?2:1)){if(end){n=this.removeChild(t[u+1]||t[u]);n.className=rl+"End";n.style.display="inline";this.parentNode.replaceChild(n,this);}else{this.parentNode.removeChild(this);\u000areturn;}}else{toggleText(t[u]);u=(u+1)%m;if(v){h[v]=c[u];}toggleText(t[u]);this.setAttribute("data-cycle",u);}lall=document.getElementsByClassName(rl+"_"+rname);\u000afor(i=0;i<lall.length;i++){updateLink(lall[i]);}};disableLink(l);setTimeout((function(l){return function(){updateLink(l);};}(l)),1);l=null;}};macros.mouserevise=macros.hoverrevise={handler:function(a,b,c,d){var endtags=["end"+b],evt=(window.onmouseenter===null?"onmouseenter":"onmouseover"),t=tagcontents(d,[b],endtags,endtags,d.source.indexOf(">>",d.matchStart)+2);\u000aif(t){var rname=c[0].replace(" ","_"),h=insertElement(a,"span",null,"hoverrevise hoverrevise_"+rname),f=function(){var done=!reviseAll("revise",rname);if(b!="hoverrevise"&&done){this[evt]=null;\u000a}};new Wikifier(h,t[0]);if(b=="hoverrevise"){h.onmouseover=f;h.onmouseout=function(){reviseAll("revert",rname);};}else{h[evt]=f;}h=null;}}};macros.instantrevise={handler:function(a,b,c,d){reviseAll("revise",c[0].replace(" ","_"));\u000a}};macros.endmouserevise=nullobj;macros.endhoverrevise=nullobj;}());
 p145
 sg23
-Vwork
+VJS
 p146
 sg25
 g26
 ((I2015
 I8
 I22
-I17
-I53
-I27
+I14
+I14
+I37
 I5
 I234
 I1
@@ -451,16 +451,16 @@ tp149
 Rp150
 sg31
 (lp151
-VDefaultStyle
+Vscript
 p152
 asg34
 g26
 ((I2015
 I8
 I22
-I13
-I54
-I48
+I14
+I1
+I58
 I5
 I234
 I1
@@ -473,27 +473,27 @@ g14
 I00
 sg15
 (lp158
-F14.0
-aF564.0
+I1093
+aI306
 asg17
 (itiddlywiki
 Tiddler
 p159
 (dp160
 g21
-V(function(){version.extensions.replaceMacrosCombined={major:1,minor:1,revision:7};var nullobj={handler:function(){}};function showVer(n,notrans){if(!n){return;}n.innerHTML="";\u000anew Wikifier(n,n.tweecode);n.setAttribute("data-enabled","true");n.style.display="inline";n.classList.remove("revision-span-out");if(!notrans){n.classList.add("revision-span-in");\u000aif(n.timeout){clearTimeout(n.timeout);}n.timeout=setTimeout(function(){n.classList.remove("revision-span-in");n=null;},20);}}function hideVer(n,notrans){if(!n){return;\u000a}n.setAttribute("data-enabled","false");n.classList.remove("revision-span-in");if(n.timeout){clearTimeout(n.timeout);}if(!notrans){n.classList.add("revision-span-out");\u000an.timeout=setTimeout(function(){if(n.getAttribute("data-enabled")=="false"){n.classList.remove("revision-span-out");n.style.display="none";n.innerHTML="";}n=null;\u000a},1000);}else{n.style.display="none";n.innerHTML="";n=null;}}function tagcontents(b,starttags,desttags,endtags,k){var l=0,c="",tg,a,i;function tagfound(i,e,endtag){for(var j=0;\u000aj<e.length;j++){if(a.indexOf("<<"+e[j]+(endtag?">>":""),i)==i){return e[j];}}}a=b.source.slice(k);for(i=0;i<a.length;i++){if(tg=tagfound(i,starttags)){l++;}else{if((tg=tagfound(i,desttags,true))&&l==0){b.nextMatch=k+i+tg.length+4;\u000areturn[c,tg];}else{if(tg=tagfound(i,endtags,true)){l--;if(l<0){return null;}}}}c+=a.charAt(i);}return null;}var begintags=[];var endtags=[];function revisionSpanHandler(g,e,f,b){var k=b.source.indexOf(">>",b.matchStart)+2,vsns=[],vtype=e,flen=f.length,becomes,c,cn,m,h,vsn;\u000afunction mkspan(vtype){h=insertElement(m,"span",null,"revision-span "+vtype);h.setAttribute("data-enabled",false);h.style.display="none";h.tweecode="";return h;}if(this.shorthand&&flen){while(f.length>0){vsns.push([f.shift(),(this.flavour=="insert"?"gains":"becomes")]);\u000a}}else{if(this.flavour=="insert"||(this.flavour=="continue"&&this.trigger=="time")){vsns.push(["","becomes"]);}}if(this.flavour=="continue"&&flen){b.nextMatch=k+b.source.slice(k).length;\u000avsns.push([b.source.slice(k),vtype]);}else{becomes=["becomes","gains"];c=tagcontents(b,begintags,becomes.concat(endtags),endtags,k);if(c&&endtags.indexOf(c[1])==-1){while(c){vsns.push(c);\u000ac=tagcontents(b,begintags,becomes,endtags,b.nextMatch);}c=tagcontents(b,begintags,["end"+e],endtags,b.nextMatch);}if(!c){throwError(g,"can't find matching end"+e);\u000areturn;}vsns.push(c);if(this.flavour=="continue"){k=b.nextMatch;b.nextMatch=k+b.source.slice(k).length;vsns.push([b.source.slice(k),""]);}}if(this.flavour=="remove"){vsns.push(["","becomes"]);\u000a}cn=0;m=insertElement(g,"span",null,e);m.setAttribute("data-flavour",this.flavour);h=mkspan("initial");vsn=vsns.shift();h.tweecode=vsn[0];showVer(h,true);while(vsns.length>0){if(vsn){vtype=vsn[1];\u000a}vsn=vsns.shift();h=mkspan(vtype);h.tweecode=vsn[0];}if(typeof this.setup=="function"){this.setup(m,g,f);}}function quantity(m){return(m.children.length-1)+(m.getAttribute("data-flavour")=="remove");\u000a}function revisionSetup(m,g,f){m.className+=" "+f[0].replace(" ","_");}function keySetup(m,g,f){var key=f[0];m.setEventListener("keydown",function l(e){var done=!revise("revise",m);\u000aif(done){m.removeEventListener("keydown",l);}});}function timeSetup(m,g,f){function cssTimeUnit(s){if(typeof s=="string"){if(s.slice(-2).toLowerCase()=="ms"){return Number(s.slice(0,-2))||0;\u000a}else{if(s.slice(-1).toLowerCase()=="s"){return Number(s.slice(0,-1))*1000||0;}}}throwError(g,s+" isn't a CSS time unit");return 0;}var tm=cssTimeUnit(f[0]);var s=state.history[0].passage.title;\u000asetTimeout(function timefn(){if(state.history[0].passage.title==s){var done=!revise("revise",m);if(!done){setTimeout(timefn,tm);}}},tm);}function hoverSetup(m){var fn,noMouseEnter=(document.head.onmouseenter!==null),m1=m.children[0],m2=m.children[1],gains=m2.className.indexOf("gains")>-1;\u000aif(!m1||!m2){return;}m1.onmouseenter=function(e){var efp=document.elementFromPoint(e.clientX,e.clientY);while(efp&&efp!==this){efp=efp.parentNode;}if(!efp){return;\u000a}if(this.getAttribute("data-enabled")!="false"){revise("revise",this.parentNode);}};m2.onmouseleave=function(e){var efp=document.elementFromPoint(e.clientX,e.clientY);\u000awhile(efp&&efp!==this){efp=efp.parentNode;}if(efp){return;}if(this.getAttribute("data-enabled")!="false"){revise("revert",this.parentNode);}};if(gains){m1.onmouseleave=m2.onmouseleave;\u000a}if(noMouseEnter){fn=function(n){return function(e){if(!event.relatedTarget||(event.relatedTarget!=this&&!(this.compareDocumentPosition(event.relatedTarget)&Node.DOCUMENT_POSITION_CONTAINED_BY))){this[n]();\u000a}};};m1.onmouseover=fn("onmouseenter");m2.onmouseout=fn("onmouseleave");if(gains){m1.onmouseout=m2.onmouseout;}}m=null;}function mouseSetup(m){var evt=(document.head.onmouseenter===null?"onmouseenter":"onmouseover");\u000am[evt]=function(){var done=!revise("revise",this);if(done){this[evt]=null;}};m=null;}function linkSetup(m,g,f){var l=Wikifier.createInternalLink(),p=m.parentNode;\u000al.className="internalLink replaceLink";p.insertBefore(l,m);l.insertBefore(m,null);l.onclick=function(){var p,done=false;if(m&&m.parentNode==this){done=!revise("revise",m);\u000ascrollWindowTo(m);}if(done){this.parentNode.insertBefore(m,this);this.parentNode.removeChild(this);}};l=null;}function visitedSetup(m,g,f){var i,done,shv=state.history[0].variables,os="once seen",d=(m.firstChild&&(this.flavour=="insert"?m.firstChild.nextSibling:m.firstChild).tweecode);\u000ashv[os]=shv[os]||{};if(d&&!shv[os].hasOwnProperty(d)){shv[os][d]=1;}else{for(i=shv[os][d];i>0&&!done;i--){done=!revise("revise",m,true);}if(shv[os].hasOwnProperty(d)){shv[os][d]+=1;\u000a}}}[{name:"insert",flavour:"insert",trigger:"link",setup:linkSetup},{name:"timedinsert",flavour:"insert",trigger:"time",setup:timeSetup},{name:"insertion",flavour:"insert",trigger:"revisemacro",setup:revisionSetup},{name:"later",flavour:"insert",trigger:"visited",setup:visitedSetup},{name:"keyinsert",flavour:"insert",trigger:"key",setup:keySetup},{name:"replace",flavour:"replace",trigger:"link",setup:linkSetup},{name:"timedreplace",flavour:"replace",trigger:"time",setup:timeSetup},{name:"mousereplace",flavour:"replace",trigger:"mouse",setup:mouseSetup},{name:"hoverreplace",flavour:"replace",trigger:"hover",setup:hoverSetup},{name:"revision",flavour:"replace",trigger:"revisemacro",setup:revisionSetup},{name:"keyreplace",flavour:"replace",trigger:"key",setup:keySetup},{name:"timedremove",flavour:"remove",trigger:"time",setup:timeSetup},{name:"mouseremove",flavour:"remove",trigger:"mouse",setup:mouseSetup},{name:"hoverremove",flavour:"remove",trigger:"hover",setup:hoverSetup},{name:"removal",flavour:"remove",trigger:"revisemacro",setup:revisionSetup},{name:"once",flavour:"remove",trigger:"visited",setup:visitedSetup},{name:"keyremove",flavour:"remove",trigger:"key",setup:keySetup},{name:"continue",flavour:"continue",trigger:"link",setup:linkSetup},{name:"timedcontinue",flavour:"continue",trigger:"time",setup:timeSetup},{name:"mousecontinue",flavour:"continue",trigger:"mouse",setup:mouseSetup},{name:"keycontinue",flavour:"continue",trigger:"key",setup:keySetup},{name:"cycle",flavour:"cycle",trigger:"revisemacro",setup:revisionSetup},{name:"mousecycle",flavour:"cycle",trigger:"mouse",setup:mouseSetup},{name:"timedcycle",flavour:"cycle",trigger:"time",setup:timeSetup},{name:"keycycle",flavour:"replace",trigger:"key",setup:keySetup}].forEach(function(e){e.handler=revisionSpanHandler;\u000ae.shorthand=(["link","mouse","hover"].indexOf(e.trigger)>-1);macros[e.name]=e;macros["end"+e.name]=nullobj;begintags.push(e.name);endtags.push("end"+e.name);});function insideDepartingSpan(elem){var r=elem.parentNode;\u000awhile(!r.classList.contains("passage")){if(r.classList.contains("revision-span-out")){return true;}r=r.parentNode;}}function reviseAll(rt,rname){var rall=document.querySelectorAll(".passage [data-flavour]."+rname),ret=false;\u000afor(var i=0;i<rall.length;i++){if(!insideDepartingSpan(rall[i])){ret=revise(rt,rall[i])||ret;}}return ret;}function revise(rt,r,notrans){var ind2,curr,next,ind=-1,rev=(rt=="revert"),rnd=(rt.indexOf("random")>-1),fl=r.getAttribute("data-flavour"),rc=r.childNodes,cyc=(fl=="cycle"),rcl=rc.length-1;\u000afunction doToGainerSpans(n,fn){for(var k=n-1;k>=0;k--){if(rc[k+1].classList.contains("gains")){fn(rc[k],notrans);}else{break;}}}for(var k=0;k<=rcl;k++){if(rc[k].getAttribute("data-enabled")=="true"){ind=k;\u000a}}if(rev){ind-=1;}curr=(ind>=0?rc[ind]:(cyc?rc[rcl]:null));ind2=ind;if(rnd){ind2=(ind+(Math.floor(Math.random()*rcl)))%rcl;}next=((ind2<rcl)?rc[ind2+1]:(cyc?rc[0]:null));\u000avar docurr=(rev?showVer:hideVer);var donext=(rev?hideVer:showVer);var currfn=function(){if(!(next&&next.classList.contains("gains"))||rnd){docurr(curr,notrans);doToGainerSpans(ind,docurr,notrans);\u000a}};var nextfn=function(){donext(next,notrans);if(rnd){doToGainerSpans(ind2+1,donext,notrans);}};if(!rev){currfn();nextfn();}else{nextfn();currfn();}return(cyc?true:(rev?(ind>0):(ind2<rcl-1)));\u000a}macros.revert=macros.revise=macros.randomise=macros.randomize={handler:function(a,b,c){var l,rev,rname;function disableLink(l){l.style.display="none";}function enableLink(l){l.style.display="inline";\u000a}function updateLink(l){if(l.className.indexOf("random")>-1){enableLink(l);return;}var rall=document.querySelectorAll(".passage [data-flavour]."+rname),cannext,canprev,i,ind,r,fl;\u000afor(i=0;i<rall.length;i++){r=rall[i],fl=r.getAttribute("data-flavour");if(insideDepartingSpan(r)){continue;}if(fl=="cycle"){cannext=canprev=true;}else{if(r.firstChild.getAttribute("data-enabled")==!1+""){canprev=true;\u000a}if(r.lastChild.getAttribute("data-enabled")==!1+""){cannext=true;}}}var can=(l.classList.contains("revert")?canprev:cannext);(can?enableLink:disableLink)(l);}function toggleText(w){w.classList.toggle(rl+"Enabled");\u000aw.classList.toggle(rl+"Disabled");w.style.display=((w.style.display=="none")?"inline":"none");}var rl="reviseLink";if(c.length<2){throwError(a,b+" macro needs 2 parameters");\u000areturn;}rname=c.shift().replace(" ","_");l=Wikifier.createInternalLink(a,null);l.className="internalLink "+rl+" "+rl+"_"+rname+" "+b;var v="";var end=false;var out=false;\u000aif(c.length>1&&c[0][0]=="$"){v=c[0].slice(1);c.shift();}switch(c[c.length-1]){case"end":end=true;c.pop();break;case"out":out=true;c.pop();break;}var h=state.history[0].variables;\u000afor(var i=0;i<c.length;i++){var on=(i==Math.max(c.indexOf(h[v]),0));var d=insertElement(null,"span",null,rl+((on)?"En":"Dis")+"abled");if(on){h[v]=c[i];l.setAttribute("data-cycle",i);\u000a}else{d.style.display="none";}insertText(d,c[i]);l.appendChild(d);}l.onclick=function(){reviseAll(b,rname);var t=this.childNodes,u=this.getAttribute("data-cycle")-0,m=t.length,n,lall,i;\u000aif((end||out)&&u>=m-(end?2:1)){if(end){n=this.removeChild(t[u+1]||t[u]);n.className=rl+"End";n.style.display="inline";this.parentNode.replaceChild(n,this);}else{this.parentNode.removeChild(this);\u000areturn;}}else{toggleText(t[u]);u=(u+1)%m;if(v){h[v]=c[u];}toggleText(t[u]);this.setAttribute("data-cycle",u);}lall=document.getElementsByClassName(rl+"_"+rname);\u000afor(i=0;i<lall.length;i++){updateLink(lall[i]);}};disableLink(l);setTimeout((function(l){return function(){updateLink(l);};}(l)),1);l=null;}};macros.mouserevise=macros.hoverrevise={handler:function(a,b,c,d){var endtags=["end"+b],evt=(window.onmouseenter===null?"onmouseenter":"onmouseover"),t=tagcontents(d,[b],endtags,endtags,d.source.indexOf(">>",d.matchStart)+2);\u000aif(t){var rname=c[0].replace(" ","_"),h=insertElement(a,"span",null,"hoverrevise hoverrevise_"+rname),f=function(){var done=!reviseAll("revise",rname);if(b!="hoverrevise"&&done){this[evt]=null;\u000a}};new Wikifier(h,t[0]);if(b=="hoverrevise"){h.onmouseover=f;h.onmouseout=function(){reviseAll("revert",rname);};}else{h[evt]=f;}h=null;}}};macros.instantrevise={handler:function(a,b,c,d){reviseAll("revise",c[0].replace(" ","_"));\u000a}};macros.endmouserevise=nullobj;macros.endhoverrevise=nullobj;}());
+V.revision-span-in {\u000a	opacity: 0;\u000a}\u000a.revision-span:not(.revision-span-out) {\u000a	transition: 1s; -webkit-transition: 1s;\u000a}\u000a.revision-span-out {\u000a	position:absolute;\u000a	opacity: 0;\u000a}\u000a\u000a.transition-out { display:none; }
 p161
 sg23
-VJS
+VUntitled Stylesheet 1
 p162
 sg25
 g26
 ((I2015
 I8
 I22
+I17
+I18
 I14
-I14
-I37
 I5
 I234
 I1
@@ -503,7 +503,7 @@ tp165
 Rp166
 sg31
 (lp167
-Vscript
+Vstylesheet
 p168
 asg34
 g26
@@ -511,8 +511,8 @@ g26
 I8
 I22
 I14
-I1
-I58
+I3
+I24
 I5
 I234
 I1
@@ -525,18 +525,18 @@ g14
 I00
 sg15
 (lp174
-I1093
-aI306
+I914
+aI148
 asg17
 (itiddlywiki
 Tiddler
 p175
 (dp176
 g21
-V.revision-span-in {\u000a	opacity: 0;\u000a}\u000a.revision-span:not(.revision-span-out) {\u000a	transition: 1s; -webkit-transition: 1s;\u000a}\u000a.revision-span-out {\u000a	position:absolute;\u000a	opacity: 0;\u000a}\u000a\u000a.transition-out { display:none; }
+V<<set $random to (1,2,3,4,5,6)>>\u000a
 p177
 sg23
-VUntitled Stylesheet 1
+Vrng
 p178
 sg25
 g26
@@ -544,8 +544,8 @@ g26
 I8
 I22
 I17
-I18
-I14
+I53
+I24
 I5
 I234
 I1
@@ -555,16 +555,16 @@ tp181
 Rp182
 sg31
 (lp183
-Vstylesheet
+VDefaultStyle
 p184
 asg34
 g26
 ((I2015
 I8
 I22
-I14
-I3
-I24
+I16
+I1
+I13
 I5
 I234
 I1
@@ -577,27 +577,27 @@ g14
 I00
 sg15
 (lp190
-I764
-aI148
+F420.0
+aF171.0
 asg17
 (itiddlywiki
 Tiddler
 p191
 (dp192
 g21
-V<<set $random to (1,2,3,4,5,6)>>\u000a
+V<<if $chocolate_recipe is false>><<set $chocolate_recipe to true>><<display chocolate>><<else if $caramel_recipe is false>><<set $caramel_recipe to true>><<display caramel>><<endif>>
 p193
 sg23
-Vrng
+Vnew
 p194
 sg25
 g26
 ((I2015
 I8
 I22
-I17
-I53
-I24
+I18
+I26
+I32
 I5
 I234
 I1
@@ -615,8 +615,8 @@ g26
 I8
 I22
 I16
-I1
-I13
+I9
+I14
 I5
 I234
 I1
@@ -629,18 +629,18 @@ g14
 I00
 sg15
 (lp206
-F563.0
-aF194.0
+F917.0
+aF8.0
 asg17
 (itiddlywiki
 Tiddler
 p207
 (dp208
 g21
-V<<replace "Try something new...">><<if $chocolate_recipe is false>><<set $chocolate_recipe to true>><<display chocolate>><<else if $caramel_recipe is false>><<set $caramel_recipe to true>><<display caramel>><<endif>><<endreplace>>
+V<<if $new_message neq $message>><<set $message to $new_message>><<else>><<display messages>><<endif>>
 p209
 sg23
-Vnew
+Vmessagededuper
 p210
 sg25
 g26
@@ -649,7 +649,7 @@ I8
 I22
 I17
 I53
-I13
+I6
 I5
 I234
 I1
@@ -667,8 +667,8 @@ g26
 I8
 I22
 I16
-I9
-I14
+I56
+I49
 I5
 I234
 I1
@@ -681,18 +681,18 @@ g14
 I00
 sg15
 (lp222
-F917.0
-aF8.0
+I17
+aI707
 asg17
 (itiddlywiki
 Tiddler
 p223
 (dp224
 g21
-V<<if $new_message neq $message>><<set $message to $new_message>><<else>><<display messages>><<endif>>
+V/* Your story will use the CSS in this passage to style the page.\u000aGive this passage more tags, and it will only affect passages with those tags.\u000aExample selectors: */\u000a\u000a.transition-out { display:none; }\u000a.transition-in { display:none; }\u000a\u000a/* No sidebar */\u000a#sidebar {\u000a  display:none;\u000a}\u000a\u000a\u000a\u000abody {\u000a	/* This affects the entire page */\u000a	\u000a	\u000a}\u000a.passage {\u000a	/* This only affects passages */\u000a	\u000a	\u000a}\u000a.passage a {\u000a	/* This affects passage links */\u000a	\u000a	\u000a}\u000a.passage a:hover {\u000a	/* This affects links while the cursor is over them */\u000a	\u000a	\u000a}
 p225
 sg23
-Vmessagededuper
+VDefault
 p226
 sg25
 g26
@@ -700,8 +700,8 @@ g26
 I8
 I22
 I17
-I53
-I6
+I52
+I44
 I5
 I234
 I1
@@ -711,68 +711,68 @@ tp229
 Rp230
 sg31
 (lp231
-VDefaultStyle
+Vstylesheet
 p232
+aVDefaultStyle
+p233
 asg34
 g26
 ((I2015
 I8
 I22
-I16
-I56
-I49
+I17
+I50
+I48
 I5
 I234
 I1
-tp233
-(dp234
-tp235
-Rp236
-sbsa(dp237
+tp234
+(dp235
+tp236
+Rp237
+sbsa(dp238
 g14
 I00
 sg15
-(lp238
-F453.0
-aF42.0
+(lp239
+I602
+aI13
 asg17
 (itiddlywiki
 Tiddler
-p239
-(dp240
+p240
+(dp241
 g21
-V[[Start]]\u000a\u000a<<set $cooking to 4>>
-p241
-sg23
-Vtest
+V<<set $day += 1>><<if $day is 6>><<set $day to 1>><<endif>>\u000a<<if $day is 1>><<set $weekday to "Monday">>\u000a<<else if $day is 2>><<set $weekday to "Tuesday">>\u000a<<else if $day is 3>><<set $weekday to "Wednesday">>\u000a<<else if $day is 4>><<set $weekday to "Thursday">>\u000a<<else if $day is 5>><<set $weekday to "Friday">><<endif>>\u000a\u000a\u000a
 p242
+sg23
+Vday
+p243
 sg25
 g26
 ((I2015
 I8
 I22
-I17
-I53
-I17
+I18
+I21
+I2
 I5
 I234
 I1
-tp243
-(dp244
-tp245
-Rp246
+tp244
+(dp245
+tp246
+Rp247
 sg31
-(lp247
-VDefaultStyle
-p248
-asg34
+(lp248
+sg34
 g26
 ((I2015
 I8
 I22
-I17
-I3
-I37
+I18
+I19
+I24
 I5
 I234
 I1
@@ -785,27 +785,27 @@ g14
 I00
 sg15
 (lp254
-I182
-aI444
+I832
+aI571
 asg17
 (itiddlywiki
 Tiddler
 p255
 (dp256
 g21
-V/* Your story will use the CSS in this passage to style the page.\u000aGive this passage more tags, and it will only affect passages with those tags.\u000aExample selectors: */\u000a\u000a.transition-out { display:none; }\u000a.transition-in { display:none; }\u000a\u000a/* No sidebar */\u000a#sidebar {\u000a  display:none;\u000a}\u000a\u000a\u000a\u000abody {\u000a	/* This affects the entire page */\u000a	\u000a	\u000a}\u000a.passage {\u000a	/* This only affects passages */\u000a	\u000a	\u000a}\u000a.passage a {\u000a	/* This affects passage links */\u000a	\u000a	\u000a}\u000a.passage a:hover {\u000a	/* This affects links while the cursor is over them */\u000a	\u000a	\u000a}
+VHi guys
 p257
 sg23
-VDefault
+VUntitled Passage 1
 p258
 sg25
 g26
 ((I2015
 I8
 I22
-I17
-I52
-I44
+I21
+I49
+I41
 I5
 I234
 I1
@@ -815,29 +815,379 @@ tp261
 Rp262
 sg31
 (lp263
-Vstylesheet
-p264
-aVDefaultStyle
-p265
+sg34
+g26
+((I2015
+I8
+I22
+I19
+I43
+I45
+I5
+I234
+I1
+tp264
+(dp265
+tp266
+Rp267
+sbsa(dp268
+g14
+I00
+sg15
+(lp269
+F384.0
+aF353.0
+asg17
+(itiddlywiki
+Tiddler
+p270
+(dp271
+g21
+VYou decide to try combining elements from different recipes... maybe you can make something new, and a little more intense.<<if $mixing.length gt 0>>\u000a\u000aYou are going to try mixing your recipe<<if $mixing.length gt 1>>s<<endif>> for [[<<$mixing[0]>>|experiment][$mixing.shift()]]<<if $mixing.length lt 2>> with something else.<<else>> and [[<<$mixing[1]>>|experiment][$mixing.pop()]].\u000a\u000a[[Experiment...|experiment2]]<<endif>><<endif>>\u000a\u000a<<if $mixing.length is 0>>You think about the recipes you know, and decide to start with...<<else if $mixing.length is 1>>You think about the recipes you know and decide to add...<<endif>>\u000a<<if $mixing.indexOf("cookies") lt 0>><<if $cookies gt 0>>\u000a[[Cookies.|experiment][$mixing.push("cookies")]]<<endif>><<endif>>\u000a<<if $mixing.indexOf("chocolate") lt 0>><<if $chocolate gt 0>>\u000a[[Chocolate.|experiment][$mixing.push("chocolate")]]<<endif>><<endif>>\u000a<<if $mixing.indexOf("caramel") lt 0>><<if $caramel gt 0>>\u000a[[Caramel.|experiment][$mixing.push("caramel")]]<<endif>><<endif>>\u000a
+p272
+sg23
+Vexperiment
+p273
+sg25
+g26
+((I2015
+I8
+I22
+I22
+I21
+I49
+I5
+I234
+I1
+tp274
+(dp275
+tp276
+Rp277
+sg31
+(lp278
+sg34
+g26
+((I2015
+I8
+I22
+I19
+I46
+I2
+I5
+I234
+I1
+tp279
+(dp280
+tp281
+Rp282
+sbsa(dp283
+g14
+I01
+sg15
+(lp284
+F388.0
+aF490.0
+asg17
+(itiddlywiki
+Tiddler
+p285
+(dp286
+g21
+V/%Recipe for chocolate chip cookies.%/<<if ($mixing.indexOf("chocolate") gte 0) and ($mixing.indexOf("cookies") gte 0)>><<set $chocolate_chip_cookies_recipe to true>><<display chocolate chip cookies>>/%\u000aRecipe for chocolate caramels%/<<else if ($mixing.indexOf("caramel") gte 0) and (mixing.indexOf("chocolate") gte 0)>><<set $chocolate_caramels_recipe to true>><<display chocolate caramels>><<else>>Three hours later, your kitchen is coated in a fine layer of cinnamon, and the egg on your face is not metaphorical. \u000a\u000aWhat even...? How...? Well, you won't try that again. \u000a\u000a[[Clean up and go to bed.|Start]]<<endif>>\u000a\u000a<<set $mixing to []>>
+p287
+sg23
+Vexperiment2
+p288
+sg25
+g26
+((I2015
+I8
+I22
+I22
+I25
+I32
+I5
+I234
+I1
+tp289
+(dp290
+tp291
+Rp292
+sg31
+(lp293
+sg34
+g26
+((I2015
+I8
+I22
+I20
+I35
+I5
+I5
+I234
+I1
+tp294
+(dp295
+tp296
+Rp297
+sbsa(dp298
+g14
+I00
+sg15
+(lp299
+F182.0
+aF436.0
+asg17
+(itiddlywiki
+Tiddler
+p300
+(dp301
+g21
+V<<set $chocolate_chip_cookies += 1>><<if $chocolate_chip_cookies_made is false>>You try putting chocolate chips into the cookie dough.<<set $chocolate_chip_cookies_made to true>><<else>><<display better>><<endif>>\u000a\u000a<<display cooldown>>
+p302
+sg23
+Vchocolate chip cookies
+p303
+sg25
+g26
+((I2015
+I8
+I22
+I22
+I6
+I43
+I5
+I234
+I1
+tp304
+(dp305
+tp306
+Rp307
+sg31
+(lp308
+VDefaultStyle
+p309
 asg34
 g26
 ((I2015
 I8
 I22
-I17
-I50
-I48
+I21
+I13
+I45
 I5
 I234
 I1
-tp266
-(dp267
-tp268
-Rp269
+tp310
+(dp311
+tp312
+Rp313
+sbsa(dp314
+g14
+I00
+sg15
+(lp315
+I420
+aI24
+asg17
+(itiddlywiki
+Tiddler
+p316
+(dp317
+g21
+VCooking always makes you feel better.
+p318
+sg23
+Vbetter
+p319
+sg25
+g26
+((I2015
+I8
+I22
+I21
+I16
+I8
+I5
+I234
+I1
+tp320
+(dp321
+tp322
+Rp323
+sg31
+(lp324
+sg34
+g26
+((I2015
+I8
+I22
+I21
+I15
+I29
+I5
+I234
+I1
+tp325
+(dp326
+tp327
+Rp328
+sbsa(dp329
+g14
+I00
+sg15
+(lp330
+I745
+aI309
+asg17
+(itiddlywiki
+Tiddler
+p331
+(dp332
+g21
+V<<timedreplace 1s>>5<<becomes>>4<<becomes>>3<<becomes>>2<<becomes>>1<<becomes>>Mmm... good...<<timedgoto "Start" 1s>><<endtimedreplace>><<silently>>\u000a<<set $cooking += 1>><<endsilently>>
+p333
+sg23
+Vcooldown
+p334
+sg25
+g26
+((I2015
+I8
+I22
+I21
+I17
+I58
+I5
+I234
+I1
+tp335
+(dp336
+tp337
+Rp338
+sg31
+(lp339
+sg34
+g26
+((I2015
+I8
+I22
+I21
+I17
+I50
+I5
+I234
+I1
+tp340
+(dp341
+tp342
+Rp343
+sbsa(dp344
+g14
+I00
+sg15
+(lp345
+I185
+aI569
+asg17
+(itiddlywiki
+Tiddler
+p346
+(dp347
+g21
+V<<set $chocolate_caramels += 1>><<if $chocolate_caramels_made is false>>Chocolate is good, caramel is good - you try putting them together.<<set $chocolate_chip_cookies_made to true>><<else>><<display better>>.<<endif>>\u000a\u000a<<display cooldown>>
+p348
+sg23
+Vchocolate caramels
+p349
+sg25
+g26
+((I2015
+I8
+I22
+I22
+I7
+I7
+I5
+I234
+I1
+tp350
+(dp351
+tp352
+Rp353
+sg31
+(lp354
+VDefaultStyle
+p355
+asg34
+g26
+((I2015
+I8
+I22
+I21
+I44
+I23
+I5
+I234
+I1
+tp356
+(dp357
+tp358
+Rp359
+sbsa(dp360
+g14
+I00
+sg15
+(lp361
+I624
+aI469
+asg17
+(itiddlywiki
+Tiddler
+p362
+(dp363
+g21
+V[[Start]]\u000a\u000a<<set $chocolate to 6>>\u000a<<set $cookies to 4>>\u000a<<set $cooking to 10>>\u000a<<set $chocolate_made to true>>\u000a<<set $chocolate_recipe to true>>
+p364
+sg23
+Vtest
+p365
+sg25
+g26
+((I2015
+I8
+I22
+I22
+I0
+I19
+I5
+I234
+I1
+tp366
+(dp367
+tp368
+Rp369
+sg31
+(lp370
+sg34
+g26
+((I2015
+I8
+I22
+I21
+I59
+I13
+I5
+I234
+I1
+tp371
+(dp372
+tp373
+Rp374
 sbsasS'scale'
-p270
+p375
 I1
 sS'snapping'
-p271
+p376
 I00
 ss.
