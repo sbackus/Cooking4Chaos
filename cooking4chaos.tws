@@ -843,7 +843,7 @@ Tiddler
 p270
 (dp271
 g21
-VYou decide to try combining elements from different recipes... maybe you can make something new, and a little more intense.<<if $mixing.length gt 0>>\u000a\u000aYou are going to try mixing your recipe<<if $mixing.length gt 1>>s<<endif>> for [[<<$mixing[0]>>|experiment][$mixing.shift()]]<<if $mixing.length lt 2>> with something else.<<else>> and [[<<$mixing[1]>>|experiment][$mixing.pop()]].\u000a\u000a[[Experiment...|experiment2]]<<endif>><<endif>>\u000a\u000a<<if $mixing.length is 0>>You think about the recipes you know, and decide to start with...<<else if $mixing.length is 1>>You think about the recipes you know and decide to add...<<endif>>\u000a<<if $mixing.indexOf("cookies") lt 0>><<if $cookies gt 0>>\u000a[[Cookies.|experiment][$mixing.push("cookies")]]<<endif>><<endif>>\u000a<<if $mixing.indexOf("chocolate") lt 0>><<if $chocolate gt 0>>\u000a[[Chocolate.|experiment][$mixing.push("chocolate")]]<<endif>><<endif>>\u000a<<if $mixing.indexOf("caramel") lt 0>><<if $caramel gt 0>>\u000a[[Caramel.|experiment][$mixing.push("caramel")]]<<endif>><<endif>>\u000a
+VYou decide to try combining elements from different recipes... maybe you can make something new, and a little more intense.<<if $mixing.length gt 0>>\u000a\u000aYou are going to try mixing your recipe<<if $mixing.length gt 1>>s<<endif>> for [[<<$mixing[0]>>|experiment][$mixing.shift()]]<<if $mixing.length lt 2>> with something else.<<else>> and [[<<$mixing[1]>>|experiment][$mixing.pop()]].\u000a\u000a[[Experiment...|experiment2]]<<endif>><<endif>>\u000a\u000a<<if $mixing.length neq 2>><<if $mixing.length is 0>>You think about the recipes you know, and decide to start with...<<else if $mixing.length is 1>>You think about the recipes you know and decide to add...<<endif>>\u000a<<if $mixing.indexOf("cookies") lt 0>><<if $cookies gt 0>>\u000a[[Cookies.|experiment][$mixing.push("cookies")]]<<endif>><<endif>>\u000a<<if $mixing.indexOf("chocolate") lt 0>><<if $chocolate gt 0>>\u000a[[Chocolate.|experiment][$mixing.push("chocolate")]]<<endif>><<endif>>\u000a<<if $mixing.indexOf("caramel") lt 0>><<if $caramel gt 0>>\u000a[[Caramel.|experiment][$mixing.push("caramel")]]<<endif>><<endif>><<endif>>\u000a
 p272
 sg23
 Vexperiment
@@ -854,8 +854,8 @@ g26
 I8
 I22
 I22
-I21
-I49
+I32
+I23
 I5
 I234
 I1
@@ -893,7 +893,7 @@ Tiddler
 p285
 (dp286
 g21
-V/%Recipe for chocolate chip cookies.%/<<if ($mixing.indexOf("chocolate") gte 0) and ($mixing.indexOf("cookies") gte 0)>><<set $chocolate_chip_cookies_recipe to true>><<display chocolate chip cookies>>/%\u000aRecipe for chocolate caramels%/<<else if ($mixing.indexOf("caramel") gte 0) and (mixing.indexOf("chocolate") gte 0)>><<set $chocolate_caramels_recipe to true>><<display chocolate caramels>><<else>>Three hours later, your kitchen is coated in a fine layer of cinnamon, and the egg on your face is not metaphorical. \u000a\u000aWhat even...? How...? Well, you won't try that again. \u000a\u000a[[Clean up and go to bed.|Start]]<<endif>>\u000a\u000a<<set $mixing to []>>
+V/%Recipe for chocolate chip cookies.%/<<if ($mixing.indexOf("chocolate") gte 0) and ($mixing.indexOf("cookies") gte 0)>><<set $chocolate_chip_cookies_recipe to true>><<display chocolate chip cookies>>/%\u000aRecipe for chocolate caramels%/<<else if ($mixing.indexOf("caramel") gte 0) and ($mixing.indexOf("chocolate") gte 0)>><<set $chocolate_caramels_recipe to true>><<display chocolate caramels>><<else>>Three hours later, your kitchen is coated in a fine layer of cinnamon, and the egg on your face is not metaphorical. \u000a\u000aWhat even...? How...? Well, you won't try that again. \u000a\u000a[[Clean up and go to bed.|Start]]<<endif>>\u000a\u000a<<set $mixing to []>>
 p287
 sg23
 Vexperiment2
@@ -904,8 +904,8 @@ g26
 I8
 I22
 I22
-I25
-I32
+I34
+I26
 I5
 I234
 I1
