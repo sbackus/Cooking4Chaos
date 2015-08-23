@@ -1,0 +1,9 @@
+Variable naming convention in Twine:
+In twine, all food-related variable are named for the complete name of the food item, with words separated by underscores.
+
+For instance, the variable that tracks how much "plain custard" the player has in their inventory is named "$plain_custard". "Plain ice cream" is "$plain_ice_cream". "Mochi" is "$mochi".
+
+These variables will exist for any food type (with plain custard as the example):
+$plain_custard - how much plain custard does the player have.
+$plain_custard_made - true/false, has the player ever made plain custard.
+$plain_custard_recipe - true/false, has the player discovered the recipe for plain custard. 
