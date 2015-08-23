@@ -23,7 +23,7 @@ p11
 (dp13
 S'selected'
 p14
-I01
+I00
 sS'pos'
 p15
 (lp16
@@ -37,7 +37,7 @@ p18
 (dp20
 S'text'
 p21
-VYour story will display this passage first. Edit it by double clicking it.\u000a\u000a\u000a<<set $inventory = [["delicious chocolate chip cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1]] >>\u000a\u000a\u000a\u000a<<set $hush_puppies = 2>>\u000a<<set $brownies = 100>>\u000a<<set $carmel = 50>>\u000a<<set $mixing = ["hush puppies","brownies"] >>\u000a<<BakeFailed>>\u000a\u000a<<print $cookies>>\u000a<<print $brownies>>\u000a\u000a\u000a<<Inventory>>\u000a[[scene2]]\u000a\u000a
+VYour story will display this passage first. Edit it by double clicking it.\u000a\u000a\u000a<<set $inventory = [["delicious chocolate chip cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1]] >>\u000a\u000a\u000a\u000a<<set $hush_puppies = 2>>\u000a<<set $chocolate_brownies = 100>>\u000a<<set $carmel = 50>>\u000a<<set $mixing = ["Hush puppies","Chocolate Brownies"] >>\u000a<<BakeFailed>>\u000a\u000a<<print $hush_puppies>>\u000a<<print $chocolate_brownies>>\u000a\u000a\u000a<<Inventory>>\u000a[[scene2]]\u000a\u000a
 p22
 sS'title'
 p23
@@ -52,8 +52,8 @@ p26
 I8
 I23
 I15
-I21
-I2
+I23
+I17
 I6
 I235
 I1
@@ -529,7 +529,7 @@ Tiddler
 p173
 (dp174
 g21
-Vtry {\u000aversion.extensions['BakeFailed'] = { \u000amajor:1, minor:0, revision:0 \u000a};\u000amacros['BakeFailed'] = {\u000ahandler: function(place, macroName, params, parser) {\u000amixingArray = state.history[0].variables['mixing']\u000afor (i = 0; i < mixingArray.length; i++) { \u000a	ingredientName = mixingArray[i];\u000a	ingredientName = ingredientName.replace("","_").toLowerCase()\u000a	state.history[0].variables[ingredientName] -= 1;\u000a}\u000a},\u000ainit: function() { },\u000a};\u000a} catch(e) {\u000athrowError(place,"Bazinga Setup Error: "+e.message); \u000a}
+Vtry {\u000aversion.extensions['BakeFailed'] = { \u000amajor:1, minor:0, revision:0 \u000a};\u000amacros['BakeFailed'] = {\u000ahandler: function(place, macroName, params, parser) {\u000amixingArray = state.history[0].variables['mixing']\u000afor (i = 0; i < mixingArray.length; i++) { \u000a	ingredientName = mixingArray[i];\u000a	ingredientName = ingredientName.replace(" ","_").toLowerCase()\u000a	state.history[0].variables[ingredientName] -= 1;\u000a}\u000a},\u000ainit: function() { },\u000a};\u000a} catch(e) {\u000athrowError(place,"Bazinga Setup Error: "+e.message); \u000a}
 p175
 sg23
 VBakeFailed
@@ -540,8 +540,8 @@ g26
 I8
 I23
 I15
-I21
-I47
+I23
+I13
 I6
 I235
 I1
