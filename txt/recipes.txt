@@ -1,0 +1,50 @@
+Recipe List
+
+-Tier 1- (13)
+Chocolate
+Plain Caramel
+Plain Custard
+Simple Candy
+Plain Cookie
+Sheet Cake
+Sweet Bun
+Flaky Pastry
+Glazed Nuts
+Mochi
+Plain Ice Cream
+Meringue
+Coffee
+
+-Tier 2- (20)
+Fruit Candy = Simple Candy + Preserves
+Chocolate Chip Cookie = Chocolate + Plain Cookie
+Plain Tart = Plain Custard + Flaky Pastry
+Chocolate Caramel = Chocolate + Plain Caramel
+Plain Cream Puff = Custard + Sweet Bun
+Macaron = Meringue + Glazed Nuts
+Brittle = Plain Caramel + Glazed Nuts
+Daifuku = Preserves + Mochi
+Mochi Ice Cream = Plain Ice Cream + Mochi
+Glazed Doughnut = Sweet Bun + Simple Candy
+Anpan = Sweet Bun + Preserves
+Chocolate Cornet = Sweet Bun + Chocolate
+Baklava = Flaky Pastry + Glazed Nuts
+Creme Brulee = Plain Custard + Plain Caramel
+Layer Cake = Sheet Cake + Plain Custard
+Fruit Cake = Sheet Cake + Preserves
+Chocolate Custard = Plain Custard + Chocolate
+Chocolate Ice Cream = Plain Ice Cream + Chocolate
+Coffee Ice Cream = Plain Ice Cream + Coffee
+Caramel Ice Cream = Plain Ice Cream + Plain Caramel
+
+-Tier 3- (10)
+Eclair = Plain Cream Puff + Chocolate
+Tiramisu = Layer Cake + Coffee
+Trifle = Layer Cake + Preserves
+Fancy Cake = Layer Cake + Marzipan
+Holiday Cake = Fruit Cake + Marzipan
+Chocolate Tart = Plain Tart + Chocolate
+Fruit Tart = Plain Tart + Preserves
+Nutty Roca = Brittle + Chocolate
+Ice Cream Sandwich = Chocolate Cookie + Plain Ice Cream
+Cookie Sundae = Any Cookie + Ice Cream combo except above
