@@ -37,7 +37,7 @@ p18
 (dp20
 S'text'
 p21
-VYour story will display this passage first. Edit it by double clicking it.\u000a\u000a\u000a<<set $inventory = [["delicious chocolate chip cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1]] >>\u000a\u000a\u000a\u000a<<set $cookies = 2>>\u000a<<set $brownies = 100>>\u000a<<set $mixing = ["cookies","brownies"] >>\u000a<<BakeFailed>>\u000a\u000a<<print $cookies>>\u000a<<print $brownies>>\u000a\u000a\u000a<<Inventory>>\u000a[[scene2]]\u000a\u000a
+VYour story will display this passage first. Edit it by double clicking it.\u000a\u000a\u000a<<set $inventory = [["delicious chocolate chip cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1],["brownies",60],["ice cream", 6],["cookies",1]] >>\u000a\u000a\u000a\u000a<<set $cookies = 2>>\u000a<<set $brownies = 100>>\u000a<<set $carmel = 50>>\u000a<<set $mixing = ["cookies","brownies"] >>\u000a<<BakeFailed>>\u000a\u000a<<print $cookies>>\u000a<<print $brownies>>\u000a\u000a\u000a<<Inventory>>\u000a[[scene2]]\u000a\u000a
 p22
 sS'title'
 p23
@@ -51,9 +51,9 @@ p26
 ((I2015
 I8
 I23
-I11
-I51
-I19
+I12
+I13
+I46
 I6
 I235
 I1
@@ -414,7 +414,7 @@ tp137
 Rp138
 sbsa(dp139
 g14
-I00
+I01
 sg15
 (lp140
 I515
@@ -425,7 +425,7 @@ Tiddler
 p141
 (dp142
 g21
-Vtry {\u000aversion.extensions['Inventory'] = { \u000amajor:1, minor:0, revision:0 \u000a};\u000amacros['Inventory'] = {\u000ahandler: function(place, macroName, params, parser) {\u000anew Wikifier(place, "Inventory!");\u000avar varValues = state.history[0].variables['inventory']\u000a\u000avar ul=document.createElement('ul');\u000aul.id = "inventory"\u000avar sidebar = document.getElementById("sidebar");\u000asidebar.appendChild(ul);\u000a\u000afor (i = 0; i < varValues.length; i++) { \u000a	new Wikifier(place, "<br>");\u000a	new Wikifier(place, varValues[i][0] + ": " + varValues[i][1]);\u000a\u000a	var li=document.createElement('li');\u000a	li.innerHTML=varValues[i][0] + ": " + varValues[i][1];\u000a	var sidebar = document.getElementById("inventory");\u000a	sidebar.appendChild(li);\u000a	\u000a\u000a}\u000a},\u000ainit: function() { },\u000a};\u000a} catch(e) {\u000athrowError(place,"Inventory Setup Error: "+e.message); \u000a}
+Vtry {\u000aversion.extensions['Inventory'] = { \u000amajor:1, minor:0, revision:0 \u000a};\u000amacros['Inventory'] = {\u000ahandler: function(place, macroName, params, parser) {\u000anew Wikifier(place, "Inventory!");\u000avar varValues = state.history[0].variables['inventory']\u000a\u000avar ul=document.createElement('ul');\u000aul.id = "inventory"\u000avar footer = document.getElementById("footer");\u000afooter.appendChild(ul);\u000a\u000afor (i = 0; i < varValues.length; i++) { \u000a	new Wikifier(place, "<br>");\u000a	new Wikifier(place, varValues[i][0] + ": " + varValues[i][1]);\u000a\u000a	var li=document.createElement('li');\u000a	li.innerHTML=varValues[i][0] + ": " + varValues[i][1];\u000a	var sidebar = document.getElementById("inventory");\u000a	sidebar.appendChild(li);\u000a	\u000a\u000a}\u000a},\u000ainit: function() { },\u000a};\u000a} catch(e) {\u000athrowError(place,"Inventory Setup Error: "+e.message); \u000a}
 p143
 sg23
 VInventory
@@ -434,12 +434,12 @@ sg25
 g26
 ((I2015
 I8
-I22
 I23
 I13
-I21
-I5
-I234
+I0
+I32
+I6
+I235
 I1
 tp145
 (dp146
