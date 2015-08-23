@@ -1,0 +1,5 @@
+Delay on standard cooking: 3s
+Delay on experimenting: 5s
+Cooking before you can make new tier 1s: 3
+Cooking before you can experiment to make tier 2s: 6
+Make a new thing is available: 100% of the time
