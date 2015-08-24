@@ -50,12 +50,12 @@ struct_time
 p26
 ((I2015
 I8
-I23
-I23
-I35
-I48
-I6
-I235
+I24
+I0
+I1
+I50
+I0
+I236
 I1
 tp27
 (dp28
@@ -731,7 +731,7 @@ g14
 I00
 sg15
 (lp237
-F735.0
+F733.75
 aF294.5
 asg17
 (itiddlywiki
@@ -947,7 +947,7 @@ Tiddler
 p302
 (dp303
 g21
-V<<timedreplace 1s>>3<<becomes>>2<<becomes>>1<<becomes>>Mmm... good...<<timedgoto "Start" 1s>><<endtimedreplace>><<silently>>\u000a<<set $cooking += 1>><<endsilently>> \u000a\u000a[img[oven]]\u000a\u000a<<display inventory>>
+V<<timedreplace 1s>>1<<becomes>>Mmm... good...<<timedgoto "Start" 1s>><<endtimedreplace>><<silently>>\u000a<<set $cooking += 1>><<endsilently>> \u000a\u000a[img[oven]]\u000a\u000a<<display inventory>>
 p304
 sg23
 Vcooldown
@@ -956,12 +956,12 @@ sg25
 g26
 ((I2015
 I8
-I23
-I23
-I2
-I52
-I6
-I235
+I24
+I0
+I7
+I53
+I0
+I236
 I1
 tp306
 (dp307
@@ -1694,7 +1694,7 @@ tp527
 Rp528
 sbsa(dp529
 g14
-I00
+I01
 sg15
 (lp530
 F1132.5
@@ -2926,7 +2926,7 @@ Tiddler
 p898
 (dp899
 g21
-VYou decide to try combining elements from different recipes... maybe you can make something new, and a little more intense.<<if $mixing.length gt 0>>\u000a\u000aYou are going to try mixing your recipe<<if $mixing.length gt 1>>s<<endif>> for [[<<$mixing[0]>>|experiment][$mixing.shift()]]<<if $mixing.length lt 2>> with something else.<<else>> and [[<<$mixing[1]>>|experiment][$mixing.pop()]].\u000a\u000a[[Experiment...|tier2experiment2]]<<endif>><<endif>>\u000a\u000a<<if $mixing.length neq 2>><<if $mixing.length is 0>>You think about the recipes you know, and decide to start with...<<else if $mixing.length is 1>>You think about the recipes you know and decide to add...<<endif>>\u000a<<if $mixing.indexOf("sugar cookies") lt 0>><<if $sugar_cookies gt 0>>\u000a[[Sugar cookies.|experiment][$mixing.push("sugar cookies")]]<<endif>><<endif>><<if $mixing.indexOf("chocolate") lt 0>><<if $chocolate gt 0>>\u000a[[Chocolate.|experiment][$mixing.push("chocolate")]]<<endif>><<endif>><<if $mixing.indexOf("plain caramel") lt 0>><<if $plain_caramel gt 0>>\u000a[[Plain caramel.|experiment][$mixing.push("plain caramel")]]<<endif>><<endif>><<if $mixing.indexOf("simple candy") lt 0>><<if $simple_candy gt 0>>\u000a[[Simple candy.|experiment][$mixing.push("simple candy")]]<<endif>><<endif>><<if $mixing.indexOf("sheet cake") lt 0>><<if $sheet_cake gt 0>>\u000a[[Sheet cake.|experiment][$mixing.push("sheet cake")]]<<endif>><<endif>><<if $mixing.indexOf("sweet bun") lt 0>><<if $sweet_bun gt 0>>\u000a[[Sweet bun.|experiment][$mixing.push("sweet bun")]]<<endif>><<endif>><<if $mixing.indexOf("flaky pastry") lt 0>><<if $flaky_pastry gt 0>>\u000a[[Flaky pastry.|experiment][$mixing.push("flaky pastry")]]<<endif>><<endif>><<if $mixing.indexOf("glazed nuts") lt 0>><<if $glazed_nuts gt 0>>\u000a[[Glazed nuts.|experiment][$mixing.push("glazed nuts")]]<<endif>><<endif>><<if $mixing.indexOf("mochi") lt 0>><<if $mochi gt 0>>\u000a[[Mochi.|experiment][$mixing.push("mochi")]]<<endif>><<endif>><<if $mixing.indexOf("plain ice cream") lt 0>><<if $plain_ice_cream gt 0>>\u000a[[Plain ice cream.|experiment][$mixing.push("plain ice cream")]]<<endif>><<endif>><<if $mixing.indexOf("meringue") lt 0>><<if $meringue gt 0>>\u000a[[Meringue.|experiment][$mixing.push("meringue")]]<<endif>><<endif>><<if $mixing.indexOf("coffee") lt 0>><<if $coffee gt 0>>\u000a[[Coffee.|experiment][$mixing.push("coffee")]]<<endif>>\u000a<<endif>><<if $mixing.indexOf("preserves") lt 0>><<if $preserves gt 0>>\u000a[[Preserves.|experiment][$mixing.push("preserves")]]<<endif>><<endif>><<endif>>\u000a
+VYou are getting bored with simple recipes.  You decide to try something really... unique.  \u000a\u000a<<if $mixing[0] or $mixing[1]>>You are going to try mixing your recipe<<if $mixing[0] or $mixing[1]>>s<<endif>> for <<if $mixing[0] >>[[<<$mixing[0]>>|tier2experiment][$mixing.shift()]]<<elseif $mixing[1] >>[[<<$mixing[1]>>|tier2experiment][$mixing.pop()]]<<endif>><<if $mixing[0] and $mixing[1]>> and [[<<$mixing[1]>>|tier2experiment][$mixing.pop()]].<<else>> with something else.<<endif>><<else>>You decide to start with...<<endif>>\u000a\u000a<<if $mixing[0] and $mixing[1]>>[[Experiment...|tier2experiment2]]<<else>>\u000a<<endif>>\u000a\u000a<<if not $mixing[0]>><<if $chocolate gt 0>>\u000a[[Chocolate|tier2experiment][$mixing[0]="chocolate"]]<<endif>><<if $plain_caramel gt 0>>\u000a[[Plain Caramel|tier2experiment][$mixing[0]="plain_caramel"]]<<endif>><<if $plain_custard gt 0>>\u000a[[Plain Custard|tier2experiment][$mixing[0]="plain_custard"]]<<endif>><<if $simple_candy gt 0>>\u000a[[Simple Candy|tier2experiment][$mixing[0]="simple_candy"]]<<endif>><<if $plain_cookie gt 0>>\u000a[[Plain Cookie|tier2experiment][$mixing[0]="plain_cookie"]]<<endif>><<if $sheet_cake gt 0>>\u000a[[Sheet Cake|tier2experiment][$mixing[0]="sheet_cake"]]<<endif>><<if $sweet_bun gt 0>>\u000a[[Sweet Bun|tier2experiment][$mixing[0]="sweet_bun"]]<<endif>><<if $flaky_pastry gt 0>>\u000a[[Flaky Pastry|tier2experiment][$mixing[0]="flaky_pastry"]]<<endif>><<if $glazed_nuts gt 0>>\u000a[[Glazed Nuts|tier2experiment][$mixing[0]="glazed_nuts"]]<<endif>><<if $mochi gt 0>>\u000a[[Mochi|tier2experiment][$mixing[0]="mochi"]]<<endif>><<if $plain_ice_cream gt 0>>\u000a[[Plain Ice Cream|tier2experiment][$mixing[0]="plain_ice_cream"]]<<endif>><<if $meringue gt 0>>\u000a[[Meringue|tier2experiment][$mixing[0]="meringue"]]<<endif>><<if $coffee gt 0>>\u000a[[Coffee|tier2experiment][$mixing[0]="coffee"]]<<endif>>\u000a<<endif>>\u000a\u000a<<if not $mixing[1]>><<if $fruit_candy gt 0>>\u000a[[Fruit Candy|tier2experiment][$mixing[0]="fruit_candy"]]<<endif>><<if $chocolate_chip_cookie gt 0>>\u000a[[Chocolate Chip Cookie|tier2experiment][$mixing[0]="chocolate_chip_cookie"]]<<endif>><<if $plain_tart gt 0>>\u000a[[Plain Tart|tier2experiment][$mixing[0]="plain_tart"]]<<endif>><<if $chocolate_caramel gt 0>>\u000a[[Chocolate Caramel|tier2experiment][$mixing[0]="chocolate_caramel"]]<<endif>><<if $plain_cream_puff gt 0>>\u000a[[Plain Cream Puff|tier2experiment][$mixing[0]="plain_cream_puff"]]<<endif>><<if $macaron gt 0>>\u000a[[Macaron|tier2experiment][$mixing[0]="macaron"]]<<endif>><<if $brittle gt 0>>\u000a[[Brittle|tier2experiment][$mixing[0]="brittle"]]<<endif>><<if $daifuku gt 0>>\u000a[[Daifuku|tier2experiment][$mixing[0]="daifuku"]]<<endif>><<if $mochi_ice_cream gt 0>>\u000a[[Mochi Ice Cream|tier2experiment][$mixing[0]="mochi_ice_cream"]]<<endif>><<if $glazed_doughnut gt 0>>\u000a[[Glazed Doughnut|tier2experiment][$mixing[0]="glazed_doughnut"]]<<endif>><<if $anpan gt 0>>\u000a[[Anpan|tier2experiment][$mixing[0]="anpan"]]<<endif>><<if $chocolate_cornet gt 0>>\u000a[[Chocolate Cornet|tier2experiment][$mixing[0]="chocolate_cornet"]]<<endif>><<if $baklava gt 0>>\u000a[[Baklava|tier2experiment][$mixing[0]="baklava"]]<<endif>><<if $creme_brulee gt 0>>\u000a[[Creme Brulee|tier2experiment][$mixing[0]="creme_brulee"]]<<endif>><<if $layer_cake gt 0>>\u000a[[Layer Cake|tier2experiment][$mixing[0]="layer_cake"]]<<endif>><<if $fruit_cake gt 0>>\u000a[[Fruit Cake|tier2experiment][$mixing[0]="fruit_cake"]]<<endif>><<if $chocolate_custard gt 0>>\u000a[[Chocolate Custard|tier2experiment][$mixing[0]="chocolate_custard"]]<<endif>><<if $chocolate_ice_cream gt 0>>\u000a[[Chocolate Ice Cream|tier2experiment][$mixing[0]="chocolate_ice_cream"]]<<endif>><<if $coffee_ice_cream gt 0>>\u000a[[Coffee Ice Cream|tier2experiment][$mixing[0]="coffee_ice_cream"]]<<endif>><<if $caramel_ice_cream gt 0>>\u000a[[Caramel Ice Cream|tier2experiment][$mixing[0]="caramel_ice_cream"]]<<endif>>\u000a<<endif>>
 p900
 sg23
 Vtier2experiment
@@ -2935,12 +2935,12 @@ sg25
 g26
 ((I2015
 I8
-I23
-I23
-I47
-I28
-I6
-I235
+I24
+I14
+I17
+I14
+I0
+I236
 I1
 tp902
 (dp903
@@ -3013,10 +3013,60 @@ tp922
 (dp923
 tp924
 Rp925
+sbsa(dp926
+g14
+I00
+sg15
+(lp927
+F1182.5
+aF220.0
+asg17
+(itiddlywiki
+Tiddler
+p928
+(dp929
+g21
+V<<set $mixing to []>>\u000a<<set $ingredient1 to false>>\u000a<<set $ingredient2 to false>>\u000a<<set $chocolate to 1>>\u000a<<set $sugar_cookies to 4>>\u000a<<set $plain_caramel to 5>>\u000a<<set $preserves to 30>>\u000a<<set $mochi to 100>>\u000a<<set $cooking to 10>>\u000a<<set $chocolate_made to true>>\u000a<<set $sugar_cookies_made to true>>\u000a<<set $plain_caramel_made to true>>\u000a<<set $plain_caramel_recipe to true>>\u000a<<set $mochi to true>>\u000a<<set $preserves to true>>\u000a<<set $chocolate_recipe to true>>\u000a[[tier2experiment]]
+p930
+sg23
+Vtest2
+p931
+sg25
+g26
+((I2015
+I8
+I24
+I12
+I41
+I18
+I0
+I236
+I1
+tp932
+(dp933
+tp934
+Rp935
+sg31
+(lp936
+sg34
+g26
+((I2015
+I8
+I24
+I12
+I9
+I25
+I0
+I236
+I1
+tp937
+(dp938
+tp939
+Rp940
 sbsasS'scale'
-p926
+p941
 F0.8
 sS'snapping'
-p927
+p942
 I00
 ss.
