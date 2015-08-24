@@ -5,7 +5,7 @@ S''
 p2
 sS'saveDestination'
 p3
-S'C:\\Users\\StarsLikeDust\\Documents\\GitHub\\Cooking4Chaos\\cookingforchaos3.tws'
+VC:\u005cUsers\u005cDave\u005cDocuments\u005cGitHub\u005cCooking4Chaos\u005ccookingforchaos3.tws
 p4
 sS'metadata'
 p5
@@ -23,7 +23,7 @@ p11
 (dp13
 S'selected'
 p14
-I00
+I01
 sS'pos'
 p15
 (lp16
@@ -37,7 +37,7 @@ p18
 (dp20
 S'text'
 p21
-V<<silently>>\u000a<<messages>>\u000a<<rng>>\u000a<<progress>>\u000a<<if ($crone is 1) and ($tier_1_recipes is 6)>>\u000a<<set $crone to 2>>\u000a<<endif>>\u000a<<if ($crone is 3) and ($tier_2_recipes is 12)>>\u000a<<set $crone to 4>>\u000a<<endif>>\u000a<<set $mixing to []>>\u000a<<set $inventory to []>>\u000a<<day>>\u000a<<endsilently>><<if $crone is 0>><<goto "prologue">><<else if $crone is 2>><<display pots pans>><<else if $crone is 4>><<display oven upgrade>><<else>>It's <<$weekday>> night. You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<else>><<if $prologue lt 4>>Last night's cookies are worth saving. You wrap them carefully in plastic.\u000a\u000a<<set $prologue += 1>> <<endif>><<endif>>\u000a\u000a<<if $crone neq 0>>\u000a\u000aWhat will you cook tonight?<<if $nothing_new is false>>\u000a\u000a[[Try something new...|new]]<<endif>><<if $crone gte 3>> \u000a\u000a[[Try something really different...|experiment]]\u000a<<endif>><<if $crone gte 3>> \u000a\u000a[[Try something crazy...|tier2experiment]]\u000a<<endif>>\u000a<<display recipes>>\u000a<<display inventory>>\u000a<<endif>>
+V<<silently>>\u000a<<messages>>\u000a<<rng>>\u000a/%<<progress>>%/\u000a<<if ($crone is 1) and ($tier_1_recipes is 6)>>\u000a<<set $crone to 2>>\u000a<<endif>>\u000a<<if ($crone is 3) and ($tier_2_recipes is 12)>>\u000a<<set $crone to 4>>\u000a<<endif>>\u000a<<if ($crone is 5) and ($tier_3_recipes is 11)>>\u000a<<set $crone to 6>>\u000a<<endif>>\u000a<<set $mixing to []>>\u000a<<set $inventory to []>>\u000a<<day>>\u000a<<endsilently>><<if $crone is 0>><<goto "prologue">><<else if $crone is 2>><<display pots pans>><<else if $crone is 4>><<display oven upgrade>><<else if $crone is 6>><<display the end>><<else>>It's <<$weekday>> night. You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<else>><<if $prologue lt 4>>Last night's cookies are worth saving. You wrap them carefully in plastic.\u000a\u000a<<set $prologue += 1>> <<endif>><<if $crone neq 0>>What will you cook tonight?<<if $nothing_new is false>>\u000a\u000a[[Try something new...|new]]<<endif>><<if $crone gte 3>> \u000a\u000a[[Try something really different...|experiment]]\u000a<<endif>><<if $crone gte 3>> \u000a\u000a[[Try something crazy...|tier2experiment]]\u000a<<endif>>\u000a<<display recipes>>\u000a<<display inventory>>\u000a<<endif>><<endif>>
 p22
 sS'title'
 p23
@@ -51,9 +51,9 @@ p26
 ((I2015
 I8
 I24
-I16
-I38
-I22
+I18
+I54
+I45
 I0
 I236
 I1
@@ -663,8 +663,8 @@ g14
 I00
 sg15
 (lp213
-F1344.5
-aF266.0
+F1132.833333333333
+aF276.00000000000006
 asg17
 (itiddlywiki
 Tiddler
@@ -1021,7 +1021,7 @@ Tiddler
 p319
 (dp320
 g21
-V[[Start]]\u000a\u000a<<set $chocolate to 1>>\u000a<<set $sugar_cookies to 4>>\u000a<<set $plain_caramel to 5>>\u000a<<set $preserves to 30>>\u000a<<set $mochi to 100>>\u000a<<set $cooking to 10>>\u000a<<set $chocolate_made to true>>\u000a<<set $sugar_cookies_made to true>>\u000a<<set $plain_caramel_made to true>>\u000a<<set $plain_caramel_recipe to true>>\u000a<<set $mochi to true>>\u000a<<set $preserves to true>>\u000a<<set $chocolate_recipe to true>>
+V[[Start]]\u000a\u000a<<set $crone to 5>>\u000a<<set $tier_3_recipes to 11>>\u000a<<set $new_thing to "eclair">>
 p321
 sg23
 Vtest
@@ -1031,9 +1031,9 @@ g26
 ((I2015
 I8
 I24
-I15
-I21
-I1
+I18
+I53
+I41
 I0
 I236
 I1
@@ -2725,7 +2725,7 @@ Tiddler
 p831
 (dp832
 g21
-V<<if $prologue lt 3>>It's <<$weekday>> night. You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<if $prologue is 0>><<set $prologue += 1>>Coming home tonight, you felt so stressed out you decided to try something new. \u000a\u000aYou stopped by the grocery store, and bought supplies for cookies.\u000a\u000a[[Make sugar cookies|sugar cookies]]<<else if $prologue is 1>><<set $prologue += 1>>You come home with more baking supplies, and throw out yesterday's cookies.\u000a\u000aYou're eager to try again. \u000a\u000a[[Make sugar cookies|sugar cookies]]<<else if $prologue is 2>><<set $prologue += 1>>You won't give up. You feel like you can't. You bring home more baking supplies. \u000a\u000a[[Make sugar cookies|sugar cookies]]<<endif>><<else>><<set $crone to 1>><<timedreplace 4s>>There's a note on your door, from your landlady downstairs.<<becomes>>The note says\u000a\u000a//Did I smell you baking cookies last night?//<<gains>>\u000a\u000a//How nice - cooking is a lovely hobby.//<<gains>>\u000a\u000a//I thought you could use this...//<<becomes>>There's an old wooden spoon laid outside the door, resting on a piece of brown paper.<<gains>>\u000a\u000aIt's not new - in fact it's well-loved - but it feels solid in your hand. Reliable.<<becomes>>Maybe you'll give this one last try...<<gains>>\u000a\u000a[[Make sugar cookies|sugar cookies]]\u000a<<endtimedreplace>><<endif>>
+V<<if $prologue lt 3>>It's <<$weekday>> night. You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<if $prologue is 0>><<set $prologue += 1>>Coming home tonight, you felt so stressed out you decided to try something new. \u000a\u000aYou stopped by the grocery store, and bought supplies for cookies.\u000a\u000a[[Make sugar cookies|sugar cookies]]<<else if $prologue is 1>><<set $prologue += 1>>You come home with more baking supplies, and throw out yesterday's cookies.\u000a\u000aYou're eager to try again. \u000a\u000a[[Make sugar cookies|sugar cookies]]<<else if $prologue is 2>><<set $prologue += 1>>You won't give up. You feel like you can't. You bring home more baking supplies. \u000a\u000a[[Make sugar cookies|sugar cookies]]<<endif>><<else>><<set $crone to 1>><<timedreplace 4s>>There's a note on your door, from your landlady downstairs.<<becomes>>The note says\u000a\u000a//Did I smell you baking cookies last night?//<<gains>>\u000a\u000a//How nice - cooking is a lovely hobby.//<<gains>>\u000a\u000a//I thought you could use this...//<<becomes>>There's an old wooden spoon laid outside the door, resting on a piece of brown paper.<<gains>>\u000a\u000aIt's not new - in fact it's well-loved - but it feels solid in your hand. Reliable.<<becomes>>Maybe you'll give this one last try...<<gains>>\u000a\u000a[[Make sugar cookies|sugar cookies]]\u000a<<endtimedreplace>><<endif>>\u000a\u000a<<display inventory>>\u000a<<display recipes>>
 p833
 sg23
 Vprologue
@@ -2735,9 +2735,9 @@ g26
 ((I2015
 I8
 I24
-I12
-I42
-I47
+I18
+I51
+I17
 I0
 I236
 I1
@@ -2775,7 +2775,7 @@ Tiddler
 p846
 (dp847
 g21
-V<<set $tier_1_recipes to $sugar_cookies_made + $chocolate_made + $plain_caramel_made + $plain_custard_made + $simple_candy_made + $sheet_cake_made + $sweet_bun_made + $flaky_pastry_made + $glazed_nuts_made + $mochi_made + $plain_ice_cream_made + $meringue_made + $coffee_made + $preserves_made>>\u000a\u000a<<set $tier_2_recipes to $chocolate_chip_cookies_made + $chocolate_caramels_made + $fruit_candy_made + $plain_tart_made + $plain_cream_puff_made + $macaron_made + $brittle_made + $daifuku_made + $mochi_ice_cream_made + $glazed_doughnut_made + $anpan_made + $chocolate_cornet_made + $baklava_made + $creme_brulee_made + $layer_cake_made + $fruit_cake_made + $chocolate_custard_made + $chocolate_ice_cream_made + $coffee_ice_cream_made + $caramel_ice_cream_made>>
+V<<set $tier_1_recipes to $sugar_cookies_made + $chocolate_made + $plain_caramel_made + $plain_custard_made + $simple_candy_made + $sheet_cake_made + $sweet_bun_made + $flaky_pastry_made + $glazed_nuts_made + $mochi_made + $plain_ice_cream_made + $meringue_made + $coffee_made + $preserves_made>>\u000a\u000a<<set $tier_2_recipes to $chocolate_chip_cookies_made + $chocolate_caramels_made + $fruit_candy_made + $plain_tart_made + $plain_cream_puff_made + $macaron_made + $brittle_made + $daifuku_made + $mochi_ice_cream_made + $glazed_doughnut_made + $anpan_made + $chocolate_cornet_made + $baklava_made + $creme_brulee_made + $layer_cake_made + $fruit_cake_made + $chocolate_custard_made + $chocolate_ice_cream_made + $coffee_ice_cream_made + $caramel_ice_cream_made>>\u000a\u000a<<set $tier_3_recipes to $eclair_made + $tiramisu_made + $trifle_made + $fancy_cake_made + $holiday_cake_made + $chocolate_tart_made + $fruit_tart_made + $nutty_roca_made + $ice_cream_sandwich_made + $cookie_sundae_made + $fancy_anpan_made>>\u000a
 p848
 sg23
 Vprogress
@@ -2785,9 +2785,9 @@ g26
 ((I2015
 I8
 I24
-I8
-I37
-I37
+I18
+I31
+I3
 I0
 I236
 I1
@@ -2877,7 +2877,7 @@ Tiddler
 p877
 (dp878
 g21
-V<<set $crone to 3>><<timedreplace 5s>>You run into your landlady as you enter the building. \u000a\u000a<<gains>>Her small, yellowish eyes move over your grocery bags. \u000a\u000a<<becomes>>//You've just been cooking up a storm, haven't you? Excellent.//\u000a\u000a<<gains>>//You know, I have all sorts of things I'm sure you could use - pots and pans and such.//\u000a\u000a<<gains>>"Oh, you don't..." you start to tell her.\u000a\u000a<<gains>>//Nonsense. I'll be much happier if you have them. Wait here.//\u000a\u000a<<becomes>>She leaves the door to her apartment slightly ajar. You carefully avoid looking inside.\u000a\u000a<<becomes>>Her apartment gives you the shivers. \u000a\u000a<<gains>>It's dim and musty, and she keeps birds in big, ornate antique cages around her living room. \u000a\u000a<<becomes>>At least you assume they're birds. \u000a\u000a<<gains>>You saw something move in one of the cages, once, speaking to her in the doorway.\u000a\u000a<<gains>>Something distinctly not avian.\u000a\u000a<<becomes>>She reappears after a moment with a brown paper bag stuffed with pots, pans, baking supplies, tongs and skewers...\u000a\u000a<<becomes>>//Have fun, dear!// she calls as you disappear up the stairs. \u000a\u000a<<gains>>//Now you can try something really different...// <<timedgoto "Start" 5s>><<endtimedreplace>>
+V<<set $crone to 3>><<timedreplace 5s>>You run into your landlady as you enter the building. \u000a\u000a<<gains>>Her small, yellowish eyes move over your grocery bags. \u000a\u000a<<becomes>>//You've just been cooking up a storm, haven't you? Excellent.//\u000a\u000a<<gains>>//You know, I have all sorts of things I'm sure you could use - pots and pans and such.//\u000a\u000a<<gains>>"Oh, you don't..." you start to tell her.\u000a\u000a<<gains>>//Nonsense. I'll be much happier if you have them. Wait here.//\u000a\u000a<<becomes>>She leaves the door to her apartment slightly ajar. You carefully avoid looking inside.\u000a\u000a<<becomes>>Her apartment gives you the shivers. \u000a\u000a<<gains>>It's dim and musty, and she keeps birds in big, ornate antique cages around her living room. \u000a\u000a<<becomes>>At least you assume they're birds. \u000a\u000a<<gains>>You saw something move in one of the cages, once, speaking to her in the doorway.\u000a\u000a<<gains>>Something distinctly not avian.\u000a\u000a<<becomes>>She reappears after a moment with a brown paper bag stuffed with pots, pans, baking supplies, tongs and skewers...\u000a\u000a<<becomes>>//Have fun, dear!// she calls as you disappear up the stairs. \u000a\u000a<<gains>>//Now you can try something really different...// <<timedgoto "Start" 5s>><<endtimedreplace>>\u000a\u000a<<display inventory>>\u000a<<display recipes>>
 p879
 sg23
 Vpots pans
@@ -2887,9 +2887,9 @@ g26
 ((I2015
 I8
 I24
-I16
-I41
-I46
+I18
+I47
+I6
 I0
 I236
 I1
@@ -2927,7 +2927,7 @@ Tiddler
 p892
 (dp893
 g21
-V<<set $crone to 5>><<timedreplace 5s>>Your landlady is waiting for you outside your building. She's grinning; her teeth are small, sharp, and brilliant white. \u000a\u000a<<gains>>//I have a surprise for you,// she says. \u000a\u000a<<becomes>>You force an impatient smile. You know exactly what you're going to make tonight... "Yes?"\u000a\u000a<<gains>>She laughs. //Oh, don't worry, I won't keep you. I know you're eager to get home. Get to work.// \u000a\u000a<<gains>>//You know, I just love a good eclair. It's really just a cream puff with chocolate. Might be a fun project.//\u000a\u000a<<becomes>>Something about her grin is off-putting. The kitchen is calling you. You hurry past. \u000a\u000a<<gains>>>//You're welcome!// she calls gaily after you. The words seem to chase you up the stairs. \u000a\u000a<<becomes>>The surprise is your stove. \u000a\u000a<<gains>>It has been cleaned til it shines; some parts have obviously been replaced.\u000a\u000a<<gains>>The labels on dials that control the oven now promise impossibly high temperatures. \u000a\u000a<<gains>>You're so happy you want to cry.<<timedgoto "Start" 5s>><<endtimedreplace>>
+V<<set $crone to 5>><<timedreplace 5s>>Your landlady is waiting for you outside your building. She's grinning; her teeth are small, sharp, and brilliant white. \u000a\u000a<<gains>>//I have a surprise for you,// she says. \u000a\u000a<<becomes>>You force an impatient smile. You know exactly what you're going to make tonight... "Yes?"\u000a\u000a<<gains>>She laughs. //Oh, don't worry, I won't keep you. I know you're eager to get home. Get to work.// \u000a\u000a<<gains>>//You know, I just love a good eclair. It's really just a cream puff with chocolate. Might be a fun project.//\u000a\u000a<<becomes>>Something about her grin is off-putting. The kitchen is calling you. You hurry past. \u000a\u000a<<gains>>>//You're welcome!// she calls gaily after you. The words seem to chase you up the stairs. \u000a\u000a<<becomes>>The surprise is your stove. \u000a\u000a<<gains>>It has been cleaned til it shines; some parts have obviously been replaced.\u000a\u000a<<gains>>The labels on dials that control the oven now promise impossibly high temperatures. \u000a\u000a<<gains>>You're so happy you want to cry.<<timedgoto "Start" 5s>><<endtimedreplace>>\u000a\u000a<<display inventory>>\u000a<<display recipes>>
 p894
 sg23
 Voven upgrade
@@ -2937,9 +2937,9 @@ g26
 ((I2015
 I8
 I24
-I8
-I41
-I58
+I18
+I51
+I4
 I0
 I236
 I1
@@ -4387,10 +4387,110 @@ sg31
 g1126
 asg33
 g1323
+sbsa(dp1325
+g14
+I00
+sg15
+(lp1326
+F1421.666666666666
+aF163.33333333333331
+asg17
+(itiddlywiki
+Tiddler
+p1327
+(dp1328
+g21
+V<<timedreplace 5s>>You take one jealous bite of the <<$new_thing>>. You need to save the rest. \u000a\u000a<<gains>>It needs to go into the stacks of carefully packaged foods that line your apartment.\u000a\u000a<<gains>>But as soon as you take a bite, you realize the truth.\u000a\u000a<<becomes>>This is it. There isn't any more. This is the perfect dish, the best thing you will ever make. \u000a\u000a<<gains>>The culmination of all your exacting work.\u000a\u000a<<becomes>>You wonder for an instant, with an icy stab of fear, what it means. \u000a\u000a<<gains>>What will happen now, without the endless pursuit of perfection? \u000a\u000a<<gains>>But the thought is swept aside with the realization that, for now, it doesn't matter. \u000a\u000a<<becomes>>You take a second bite of the <<$new_thing>>. And a third. \u000a\u000a<<gains>>And then something breaks, and you're shoveling the whole thing in your mouth.\u000a\u000a<<gains>>And then you're shoveling everything into your mouth. Everything you've made. \u000a\u000a<<becomes>>You come to yourself later. You've eaten more than you should have. \u000a\u000a<<gains>>You lie on the cold ground on your stomach. You don't feel able to lift yourself.\u000a\u000a<<gains>>Where are you? Not in your apartment...\u000a\u000a<<becomes>>Your landlady's face looms large in front of you. What? //Waking up, are we?// she asks sweetly. \u000a\u000a<<gains>>You try to answer, but your throat is raw and your tongue is sluggish, and all that comes out is a raspy croak.\u000a\u000a<<gains>>//No, no//, she says. //Don't try to speak.// And she throws back her head and laughs, showing those pointy little teeth. \u000a\u000a<<becomes>>Where are you? This isn't your apartment... No. You're in her apartment.\u000a\u000a<<gains>>And you're in a cage. And she's gigantic. \u000a\u000a<<gains>>And when you look down at your hands, they aren't hands at all. \u000a\u000a<<becomes>>There is a mirror over your landlady's shoulder. It reflects her, and a big, ornate bird cage that she peers into. \u000a\u000a<<gains>>And inside the cage - a creature with scales, a long dark lizard crawling on all fours. \u000a\u000a<<becomes>>In the mirror, you can also see a cardboard box resting on her dining room rable. \u000a\u000a<<gains>>It's stuffed with the pots and pans and other implements she loaned you.\u000a\u000a<<gains>>The wooden baking spoon is on top.\u000a\u000a<<gains>>And next to the box, a sign spread out on the table, ready to be hung up.\u000a\u000a<<becomes>>"Room For Rent." \u000a\u000a<<gains>>The End <<timedgoto "credits" 3s>><<endtimedreplace>>\u000a\u000a<<display inventory>>\u000a<<display recipes>>
+p1329
+sg23
+Vthe end
+p1330
+sg25
+g26
+((I2015
+I8
+I24
+I18
+I53
+I5
+I0
+I236
+I1
+tp1331
+(dp1332
+tp1333
+Rp1334
+sg31
+(lp1335
+sg33
+g26
+((I2015
+I8
+I24
+I18
+I13
+I34
+I0
+I236
+I1
+tp1336
+(dp1337
+tp1338
+Rp1339
+sbsa(dp1340
+g14
+I00
+sg15
+(lp1341
+F1401.6666666666665
+aF329.99999999999994
+asg17
+(itiddlywiki
+Tiddler
+p1342
+(dp1343
+g21
+VPlaceholder.
+p1344
+sg23
+Vcredits
+p1345
+sg25
+g26
+((I2015
+I8
+I24
+I18
+I37
+I19
+I0
+I236
+I1
+tp1346
+(dp1347
+tp1348
+Rp1349
+sg31
+(lp1350
+sg33
+g26
+((I2015
+I8
+I24
+I18
+I37
+I7
+I0
+I236
+I1
+tp1351
+(dp1352
+tp1353
+Rp1354
 sbsasS'scale'
-p1325
-F0.8
+p1355
+F0.6000000000000001
 sS'snapping'
-p1326
+p1356
 I00
 ss.
