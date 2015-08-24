@@ -1,0 +1,47 @@
+commented out section of cooldown and prologue cooldown
+prologue cutscene too fast
+percent sign showing up on cooldown page
+
+you try making a simple, cake <-extra comma
+
+spacing of timer is wring for sugar cookies
+also for brittle
+also chocolate icecream
+
+tier2 option is available too soon.
+
+nevermind button on the experiment page
+
+put inventory on the experiment page
+
+add baking animation
+
+coffee not in inventory
+
+period after all the things in experiment
+
+custard doesn't show in inventory
+
+color code the lists by tier
+
+bakefail! shows up on count page
+
+chocolate chip cookies don't show up on tier2experiment page
+
+<<display>> fruit preserves did not evaluate to a passage name - experiment - fruit candy
+
+mochi spelled wrong(moci) on daifuku page
+
+preserves not in recipe list
+
+gourmet coffee text always displays when making coffee ie making coffee takes you to experiment text rather than 'cooking always makes you feel better'
+
+too much space before 'try something crazy'
+
+try something new showing even after discovering all the things.
+also try something new leads to a blank page from then on.
+
+sweet bun is not a thing
+marzipan is not a thing
+
+chocolate cookies not in tier2 experiments
