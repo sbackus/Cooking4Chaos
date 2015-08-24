@@ -5,7 +5,7 @@ S''
 p2
 sS'saveDestination'
 p3
-S'C:\\Users\\StarsLikeDust\\Documents\\GitHub\\Cooking4Chaos\\cooking4chaos.tws'
+V/Users/sambackus/Code/bakery/cooking4chaos.tws
 p4
 sS'metadata'
 p5
@@ -37,7 +37,7 @@ p18
 (dp20
 S'text'
 p21
-V<<silently>>\u000a<<messages>>\u000a<<rng>>\u000a<<set $mixing to []>>\u000a<<set $inventory to []>>\u000a<<display day>>\u000a<<endsilently>><<$random>> It's <<$weekday>> night. You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<if $cooking is 0>>You decide to try something new - cooking. Maybe that will help you relax.<<else if $cooking lt 5>>You decide to try cooking again.<<else>>What will you cook tonight?<<endif>>\u000a\u000a[[Make sugar cookies|sugar cookies]]<<if $chocolate_recipe is true>>\u000a[[Make chocolate|chocolate]]<<endif>><<if $plain_caramel_recipe is true>>\u000a[[Make plain caramel|plain caramel]]<<endif>><<if $plain_custard_recipe is true>>\u000a[[Make plain custard|plain custard]]<<endif>><<if $simple_candy_recipe is true>>\u000a[[Make simple candy|simple candy]]<<endif>><<if $sheet_cake_recipe is true>>\u000a[[Make sheet cake|sheet cake]]<<endif>><<if $sweet_bun_recipe is true>>\u000a[[Make sweet bun|sweet bun]]<<endif>><<if $flaky_pastry_recipe is true>>\u000a[[Make flaky pastry|flaky pastry]]<<endif>><<if $glazed_nuts_recipe is true>>\u000a[[Make glazed nuts|glazed nuts]]<<endif>><<if $mochi_recipe is true>>\u000a[[Make mochi|mochi]]<<endif>><<if $plain_ice_cream_recipe is true>>\u000a[[Make plain ice cream|plain ice cream]]<<endif>><<if $meringue_recipe is true>>\u000a[[Make meringue|meringue]]<<endif>><<if $coffee_recipe is true>>\u000a[[Make coffee|coffee]]<<endif>><<if $preserves_recupe is true>>\u000a[[Make preserves|preserves]]<<endif>><<if $chocolate_chip_cookies_recipe is true>><<if ($chocolate gt 0) and ($sugar_cookies gt 0)>>\u000a[[Make chocolate chip cookies|chocolate chip cookies]]<<else>>\u000aMake chocolate chip cookies (need ingredients)<<endif>><<endif>><<if $fruit_candy_recipe is true>><<if ($simple_candy gt 0) and ($preserves gt 0)>>\u000a[[Make fruit candy|fruit candy]]<<else>>\u000aMake fruit candy (need ingredients)<<endif>><<endif>><<if $plain_tart_recipe is true>><<if ($plain_custard gt 0) and ($flaky_pastry gt 0)>>\u000a[[Make plain tart|plain tart]]<<else>>\u000aMake plain tart (need ingredients)<<endif>><<endif>><<if $plain_cream_puff_recipe is true>><<if ($custard gt 0) and ($sweet_bun gt 0)>>\u000a[[Make plain cream puff|plain cream puff]]<<else>>\u000aMake plain cream puff (need ingredients)<<endif>><<endif>><<if $macaron_recipe is true>><<if ($meringue gt 0) and ($glazed_nuts gt 0)>>\u000a[[Make macaron|macaron]]<<else>>\u000aMake macaron (need ingredients)<<endif>><<endif>><<if $brittle_recipe is true>><<if ($plain_caramel gt 0) and ($glazed_nuts gt 0)>>\u000a[[Make brittle|brittle]]<<else>>\u000aMake brittle (need ingredients)<<endif>><<endif>><<if $daifuku_recipe is true>><<if ($preserves gt 0) and ($mochi gt 0)>>\u000a[[Make daifuku|daifuku]]<<else>>\u000aMake daifuku (need ingredients)<<endif>><<endif>><<if $mochi_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($mochi gt 0)>>\u000a[[Make mochi ice cream|mochi ice cream]]<<else>>\u000aMake mochi ice cream (need ingredients)<<endif>><<endif>><<if $glazed_doughnut_recipe is true>><<if ($sweet_bun gt 0) and ($simple_candy gt 0)>>\u000a[[Make glazed doughnut|glazed doughnut]]<<else>>\u000aMake glazed doughnut (need ingredients)<<endif>><<endif>><<if $anpan_recipe is true>><<if ($sweet_bun gt 0) and ($preserves gt 0)>>\u000a[[Make anpan|anpan]]<<else>>\u000aMake anpan (need ingredients)<<endif>><<endif>><<if $chocolate_cornet_recipe is true>><<if ($sweet_bun gt 0) and ($chocolate gt 0)>>\u000a[[Make chocolate cornet|chocolate cornet]]<<else>>\u000aMake chocolate cornet (need ingredients)<<endif>><<endif>><<if $baklava_recipe is true>><<if ($flaky_pastry gt 0) and ($glazed_nuts gt 0)>>\u000a[[Make baklava|baklava]]<<else>>\u000aMake baklava (need ingredients)<<endif>><<endif>><<if $creme_brulee_recipe is true>><<if ($plain_custard gt 0) and ($plain_caramel gt 0)>>\u000a[[Make creme brulee|creme brulee]]<<else>>\u000aMake creme brulee (need ingredients)<<endif>><<endif>><<if $layer_cake_recipe is true>><<if ($sheet_cake gt 0) and ($plain_custard gt 0)>>\u000a[[Make layer cake|layer cake]]<<else>>\u000aMake layer cake (need ingredients)<<endif>><<endif>><<if $fruit_cake_recipe is true>><<if ($sheet_cake gt 0) and ($preserves gt 0)>>\u000a[[Make fruit cake|fruit cake]]<<else>>\u000aMake fruit cake (need ingredients)<<endif>><<endif>><<if $chocolate_custard_recipe is true>><<if ($plain_custard gt 0) and ($chocolate gt 0)>>\u000a[[Make chocolate custard|chocolate custard]]<<else>>\u000aMake chocolate custard (need ingredients)<<endif>><<endif>><<if $chocolate_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($chocolate gt 0)>>\u000a[[Make chocolate ice cream|chocolate ice cream]]<<else>>\u000aMake chocolate ice cream (need ingredients)<<endif>><<endif>><<if $coffee_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($coffee gt 0)>>\u000a[[Make coffee ice cream|coffee ice cream]]<<else>>\u000aMake coffee ice cream (need ingredients)<<endif>><<endif>><<if $caramel_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($plain_caramel gt 0)>>\u000a[[Make caramel ice cream|caramel ice cream]]<<else>>\u000aMake caramel ice cream (need ingredients)<<endif>><<endif>><<if $chocolate_caramels_recipe is true>><<if ($chocolate gt 0) and ($plain_caramel gt 0)>>\u000a[[Make chocolate chip cookies|chocolate chip cookies]]<<else>>\u000aMake chocolate chip cookies (need ingredients)<<endif>><<endif>><<if $chocolate_caramels_recipe is true>><<if ($chocolate gt 0) and ($plain_caramel gt 0)>>\u000a[[Make chocolate caramels|chocolate caramels]]<<else>>Make chocolate caramels (need ingredients)<<endif>><<endif>><<if $cooking gte 3>><<if $nothing_new is false>><<if $chocolate_recipe is false>>\u000a\u000a[[Try something new...|new]]\u000a<<else if $random gt 0>>\u000a\u000a[[Try something new...|new]]<<endif>><<endif>><<endif>><<if ($cooking gte 6) and ($chocolate_made is true)>>\u000a\u000a[[Experiment...|experiment]]\u000a<<endif>><<display inventory>>
+V<<silently>>\u000a<<messages>>\u000a<<rng>>\u000a<<set $mixing to []>>\u000a<<set $inventory to []>>\u000a<<display day>>\u000a<<endsilently>><<$random>> It's <<$weekday>> night. You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<if $cooking is 0>>You decide to try something new - cooking. Maybe that will help you relax.<<else if $cooking lt 5>>You decide to try cooking again.<<else>>What will you cook tonight?<<endif>>\u000a\u000a<<if $cooking gte 1>><<if $nothing_new is false>><<if $chocolate_recipe is false>>\u000a\u000a[[Try something new...|new]]\u000a<<else if $random gt 0>>\u000a\u000a[[Try something new...|new]]<<endif>><<endif>><<endif>><<if ($cooking gte 6) and ($chocolate_made is true)>>\u000a\u000a[[Experiment...|experiment]]\u000a<<endif>>\u000a<<if ($cooking gte 15) and ($fruit_candy_made or $chocolate_chip_cookie_made or $plain_tart_made or $chocolate_caramel_made or $plain_cream_puff_made or $macaron_made or $brittle_made or $daifuku_made or $mochi_ice_cream_made or $glazed_doughnut_made or $anpan_made or $chocolate_cornet_made or $baklava_made or $creme_brulee_made or $layer_cake_made or $fruit_cake_made or $chocolate_custard_made or $chocolate_ice_cream_made or $coffee_ice_cream_made or $caramel_ice_cream)>>\u000a\u000a[[Kick it up a knotch...|tier2experiment]]\u000a<<endif>>\u000a<<display inventory>><<display recipes>>
 p22
 sS'title'
 p23
@@ -51,9 +51,9 @@ p26
 ((I2015
 I8
 I23
-I21
-I46
-I15
+I23
+I35
+I48
 I6
 I235
 I1
@@ -731,8 +731,8 @@ g14
 I00
 sg15
 (lp237
-F761.25
-aF293.25
+F735.0
+aF294.5
 asg17
 (itiddlywiki
 Tiddler
@@ -783,15 +783,15 @@ g14
 I00
 sg15
 (lp253
-F764.0
-aF425.25
+F734.0
+aF427.75
 asg17
 (itiddlywiki
 Tiddler
 p254
 (dp255
 g21
-V/%Recipe for chocolate chip cookies.%/<<if ($mixing.indexOf("chocolate") gte 0) and ($mixing.indexOf("sugar cookies") gte 0)>><<set $chocolate_chip_cookies_recipe to true>><<display chocolate chip cookies>>/%\u000aRecipe for chocolate caramels%/<<else if ($mixing.indexOf("plain caramel") gte 0) and ($mixing.indexOf("chocolate") gte 0)>><<set $chocolate_caramels_recipe to true>><<display chocolate caramels>>/%\u000aRecipe for fruit candy%/<<else if ($mixing.indexOf("simple candy") gte 0) and ($mixing.indexOf("preserves") gte 0)>><<set $fruit_candy_recipe to true>><<display fruit preserves>>/%\u000aRecipe for plain tart%/<<else if ($mixing.indexOf("plain custard") gte 0) and ($mixing.indexOf("flaky pastry") gte 0)>><<display plain tart>>/%\u000aRecipe for plain cream puff%/<<else if ($mixing.indexOf("plain custard") gte 0) and ($mixing.indexOf("flaky pastry") gte 0)>><<display plain tart>>/% \u000arecipe for plain cream puff%/<<else if ($mixing.indexOf("custard") gte 0) and ($mixing.indexOf("sweet bun") gte 0)>><<set $plain_cream_puff_recipe to true>><<display plain cream puff>>/% \u000arecipe for macaron%/<<else if ($mixing.indexOf("meringue") gte 0) and ($mixing.indexOf("glazed nuts") gte 0)>><<set $macaron_recipe to true>><<display macaron>>/% \u000arecipe for brittle%/<<else if ($mixing.indexOf("plain caramel") gte 0) and ($mixing.indexOf("glazed nuts") gte 0)>><<set $brittle_recipe to true>><<display brittle>>/% \u000arecipe for daifuku%/<<else if ($mixing.indexOf("preserves") gte 0) and ($mixing.indexOf("mochi") gte 0)>><<set $daifuku_recipe to true>><<display daifuku>>/% \u000arecipe for mochi ice cream%/<<else if ($mixing.indexOf("plain ice cream") gte 0) and ($mixing.indexOf("mochi") gte 0)>><<set $mochi_ice_cream_recipe to true>><<display mochi ice cream>>/% \u000arecipe for glazed doughnut%/<<else if ($mixing.indexOf("sweet bun") gte 0) and ($mixing.indexOf("simple candy") gte 0)>><<set $glazed_doughnut_recipe to true>><<display glazed doughnut>>/% \u000arecipe for anpan%/<<else if ($mixing.indexOf("sweet bun") gte 0) and ($mixing.indexOf("preserves") gte 0)>><<set $anpan_recipe to true>><<display anpan>>/% \u000arecipe for chocolate cornet%/<<else if ($mixing.indexOf("sweet bun") gte 0) and ($mixing.indexOf("chocolate") gte 0)>><<set $chocolate_cornet_recipe to true>><<display chocolate cornet>>/% \u000arecipe for baklava%/<<else if ($mixing.indexOf("flaky pastry") gte 0) and ($mixing.indexOf("glazed nuts") gte 0)>><<set $baklava_recipe to true>><<display baklava>>/% \u000arecipe for creme brulee%/<<else if ($mixing.indexOf("plain custard") gte 0) and ($mixing.indexOf("plain caramel") gte 0)>><<set $creme_brulee_recipe to true>><<display creme brulee>>/% \u000arecipe for layer cake%/<<else if ($mixing.indexOf("sheet cake") gte 0) and ($mixing.indexOf("plain custard") gte 0)>><<set $layer_cake_recipe to true>><<display layer cake>>/% \u000arecipe for fruit cake%/<<else if ($mixing.indexOf("sheet cake") gte 0) and ($mixing.indexOf("preserves") gte 0)>><<set $fruit_cake_recipe to true>><<display fruit cake>>/% \u000arecipe for chocolate custard%/<<else if ($mixing.indexOf("plain custard") gte 0) and ($mixing.indexOf("chocolate") gte 0)>><<set $chocolate_custard_recipe to true>><<display chocolate custard>>/% \u000arecipe for chocolate ice cream%/<<else if ($mixing.indexOf("plain ice cream") gte 0) and ($mixing.indexOf("chocolate") gte 0)>><<set $chocolate_ice_cream_recipe to true>><<display chocolate ice cream>>/% \u000arecipe for coffee ice cream%/<<else if ($mixing.indexOf("plain ice cream") gte 0) and ($mixing.indexOf("coffee") gte 0)>><<set $coffee_ice_cream_recipe to true>><<display coffee ice cream>>/% \u000arecipe for caramel ice cream%/<<else if ($mixing.indexOf("plain ice cream") gte 0) and ($mixing.indexOf("plain caramel") gte 0)>><<set $caramel_ice_cream_recipe to true>><<display caramel ice cream>>\u000a\u000a\u000a\u000a<<else>><<BakeFailed>><<timedreplace 1s>>5<<becomes>>4<<becomes>>3<<becomes>>2<<becomes>>1<<becomes>>Three hours later, your kitchen is coated in a fine layer of cinnamon, and the egg on your face is not metaphorical. \u000a\u000aWhat even...? How...? Well, you won't try that again. \u000a\u000a<<timedgoto "Start" 3s>><<endtimedreplace>><<endif>>\u000a\u000a<<set $mixing to []>>
+V/%Recipe for chocolate chip cookies.%/<<if ($mixing.indexOf("chocolate") gte 0) and ($mixing.indexOf("sugar cookies") gte 0)>><<set $chocolate_chip_cookies_recipe to true>><<display chocolate chip cookies>>/%\u000aRecipe for chocolate caramels%/<<else if ($mixing.indexOf("plain caramel") gte 0) and ($mixing.indexOf("chocolate") gte 0)>><<set $chocolate_caramels_recipe to true>><<display chocolate caramels>>/%\u000aRecipe for fruit candy%/<<else if ($mixing.indexOf("simple candy") gte 0) and ($mixing.indexOf("preserves") gte 0)>><<set $fruit_candy_recipe to true>><<display fruit preserves>>/%\u000aRecipe for plain tart%/<<else if ($mixing.indexOf("plain custard") gte 0) and ($mixing.indexOf("flaky pastry") gte 0)>><<display plain tart>>/%\u000aRecipe for plain cream puff%/<<else if ($mixing.indexOf("plain custard") gte 0) and ($mixing.indexOf("flaky pastry") gte 0)>><<display plain tart>>/% \u000arecipe for plain cream puff%/<<else if ($mixing.indexOf("custard") gte 0) and ($mixing.indexOf("sweet bun") gte 0)>><<set $plain_cream_puff_recipe to true>><<display plain cream puff>>/% \u000arecipe for macaron%/<<else if ($mixing.indexOf("meringue") gte 0) and ($mixing.indexOf("glazed nuts") gte 0)>><<set $macaron_recipe to true>><<display macaron>>/% \u000arecipe for brittle%/<<else if ($mixing.indexOf("plain caramel") gte 0) and ($mixing.indexOf("glazed nuts") gte 0)>><<set $brittle_recipe to true>><<display brittle>>/% \u000arecipe for daifuku%/<<else if ($mixing.indexOf("preserves") gte 0) and ($mixing.indexOf("mochi") gte 0)>><<set $daifuku_recipe to true>><<display daifuku>>/% \u000arecipe for mochi ice cream%/<<else if ($mixing.indexOf("plain ice cream") gte 0) and ($mixing.indexOf("mochi") gte 0)>><<set $mochi_ice_cream_recipe to true>><<display mochi ice cream>>/% \u000arecipe for glazed doughnut%/<<else if ($mixing.indexOf("sweet bun") gte 0) and ($mixing.indexOf("simple candy") gte 0)>><<set $glazed_doughnut_recipe to true>><<display glazed doughnut>>/% \u000arecipe for anpan%/<<else if ($mixing.indexOf("sweet bun") gte 0) and ($mixing.indexOf("preserves") gte 0)>><<set $anpan_recipe to true>><<display anpan>>/% \u000arecipe for chocolate cornet%/<<else if ($mixing.indexOf("sweet bun") gte 0) and ($mixing.indexOf("chocolate") gte 0)>><<set $chocolate_cornet_recipe to true>><<display chocolate cornet>>/% \u000arecipe for baklava%/<<else if ($mixing.indexOf("flaky pastry") gte 0) and ($mixing.indexOf("glazed nuts") gte 0)>><<set $baklava_recipe to true>><<display baklava>>/% \u000arecipe for creme brulee%/<<else if ($mixing.indexOf("plain custard") gte 0) and ($mixing.indexOf("plain caramel") gte 0)>><<set $creme_brulee_recipe to true>><<display creme brulee>>/% \u000arecipe for layer cake%/<<else if ($mixing.indexOf("sheet cake") gte 0) and ($mixing.indexOf("plain custard") gte 0)>><<set $layer_cake_recipe to true>><<display layer cake>>/% \u000arecipe for fruit cake%/<<else if ($mixing.indexOf("sheet cake") gte 0) and ($mixing.indexOf("preserves") gte 0)>><<set $fruit_cake_recipe to true>><<display fruit cake>>/% \u000arecipe for chocolate custard%/<<else if ($mixing.indexOf("plain custard") gte 0) and ($mixing.indexOf("chocolate") gte 0)>><<set $chocolate_custard_recipe to true>><<display chocolate custard>>/% \u000arecipe for chocolate ice cream%/<<else if ($mixing.indexOf("plain ice cream") gte 0) and ($mixing.indexOf("chocolate") gte 0)>><<set $chocolate_ice_cream_recipe to true>><<display chocolate ice cream>>/% \u000arecipe for coffee ice cream%/<<else if ($mixing.indexOf("plain ice cream") gte 0) and ($mixing.indexOf("coffee") gte 0)>><<set $coffee_ice_cream_recipe to true>><<display coffee ice cream>>/% \u000arecipe for caramel ice cream%/<<else if ($mixing.indexOf("plain ice cream") gte 0) and ($mixing.indexOf("plain caramel") gte 0)>><<set $caramel_ice_cream_recipe to true>><<display caramel ice cream>>\u000a\u000a\u000a\u000a<<else>><<BakeFailed>><<timedreplace 1s>>5<<becomes>>4<<becomes>>3<<becomes>>2<<becomes>>1<<becomes>>Three hours later, your kitchen is coated in a fine layer of cinnamon, and the egg on your face is not metaphorical. \u000a\u000aWhat even...? How...? Well, you won't try that again. \u000a\u000a[[Clean up...|Start]]<<endtimedreplace>><<endif>>\u000a\u000a<<set $mixing to []>>
 p256
 sg23
 Vexperiment2
@@ -801,9 +801,9 @@ g26
 ((I2015
 I8
 I23
+I23
 I20
-I0
-I10
+I51
 I6
 I235
 I1
@@ -939,15 +939,15 @@ g14
 I00
 sg15
 (lp301
-F974.75
-aF301.5
+F1023.5
+aF296.5
 asg17
 (itiddlywiki
 Tiddler
 p302
 (dp303
 g21
-V<<timedreplace 60s>>3<<becomes>>2<<becomes>>1<<becomes>>Mmm... good...<<timedgoto "Start" 1s>><<endtimedreplace>><<silently>>\u000a<<set $cooking += 1>><<endsilently>> \u000a\u000a[img[oven]]\u000a\u000a<<display inventory>>
+V<<timedreplace 1s>>3<<becomes>>2<<becomes>>1<<becomes>>Mmm... good...<<timedgoto "Start" 1s>><<endtimedreplace>><<silently>>\u000a<<set $cooking += 1>><<endsilently>> \u000a\u000a[img[oven]]\u000a\u000a<<display inventory>>
 p304
 sg23
 Vcooldown
@@ -957,9 +957,9 @@ g26
 ((I2015
 I8
 I23
-I22
-I28
-I19
+I23
+I2
+I52
 I6
 I235
 I1
@@ -1595,15 +1595,15 @@ g14
 I00
 sg15
 (lp499
-F2.5
-aF706.25
+F6.25
+aF707.5
 asg17
 (itiddlywiki
 Tiddler
 p500
 (dp501
 g21
-Vtry {\u000aversion.extensions['BakeFailed'] = { \u000amajor:1, minor:0, revision:0 \u000a};\u000amacros['BakeFailed'] = {\u000ahandler: function(place, macroName, params, parser) {\u000anew Wikifier(place, "BakeFail!");\u000amixingArray = state.history[0].variables['mixing']\u000afor (i = 0; i < mixingArray.length; i++) { \u000a	ingredientName = mixingArray[i]\u000a	state.history[0].variables[ingredientName] -= 1\u000a}\u000a},\u000ainit: function() { },\u000a};\u000a} catch(e) {\u000athrowError(place,"Bazinga Setup Error: "+e.message); \u000a}
+Vtry {\u000aversion.extensions['BakeFailed'] = { \u000amajor:1, minor:0, revision:0 \u000a};\u000amacros['BakeFailed'] = {\u000ahandler: function(place, macroName, params, parser) {\u000amixingArray = state.history[0].variables['mixing']\u000afor (i = 0; i < mixingArray.length; i++) { \u000a	ingredientName = mixingArray[i]\u000a	state.history[0].variables[ingredientName] -= 1\u000a}\u000a},\u000ainit: function() { },\u000a};\u000a} catch(e) {\u000athrowError(place,"Bazinga Setup Error: "+e.message); \u000a}
 p502
 sg23
 VBakeFailed
@@ -1613,9 +1613,9 @@ g26
 ((I2015
 I8
 I23
-I15
+I23
+I11
 I2
-I59
 I6
 I235
 I1
@@ -2876,7 +2876,7 @@ Tiddler
 p883
 (dp884
 g21
-V<div class="recipes">\u000a[[Make sugar cookies|sugar cookies]]<<if $chocolate_recipe is true>>\u000a[[Make chocolate|chocolate]]<<endif>><<if $plain_caramel_recipe is true>>\u000a[[Make plain caramel|plain caramel]]<<endif>><<if $plain_custard_recipe is true>>\u000a[[Make plain custard|plain custard]]<<endif>><<if $simple_candy_recipe is true>>\u000a[[Make simple candy|simple candy]]<<endif>><<if $sheet_cake_recipe is true>>\u000a[[Make sheet cake|sheet cake]]<<endif>><<if $sweet_bun_recipe is true>>\u000a[[Make sweet bun|sweet bun]]<<endif>><<if $flaky_pastry_recipe is true>>\u000a[[Make flaky pastry|flaky pastry]]<<endif>><<if $glazed_nuts_recipe is true>>\u000a[[Make glazed nuts|glazed nuts]]<<endif>><<if $mochi_recipe is true>>\u000a[[Make mochi|mochi]]<<endif>><<if $plain_ice_cream_recipe is true>>\u000a[[Make plain ice cream|plain ice cream]]<<endif>><<if $meringue_recipe is true>>\u000a[[Make meringue|meringue]]<<endif>><<if $coffee_recipe is true>>\u000a[[Make coffee|coffee]]<<endif>><<if $preserves_recupe is true>>\u000a[[Make preserves|preserves]]<<endif>><<if $chocolate_chip_cookies_recipe is true>><<if ($chocolate gt 0) and ($sugar_cookies gt 0)>>\u000a[[Make chocolate chip cookies|chocolate chip cookies]]<<else>>\u000aMake chocolate chip cookies (need ingredients)<<endif>><<endif>><<if $fruit_candy_recipe is true>><<if ($simple_candy gt 0) and ($preserves gt 0)>>\u000a[[Make fruit candy|fruit candy]]<<else>>\u000aMake fruit candy (need ingredients)<<endif>><<endif>><<if $plain_tart_recipe is true>><<if ($plain_custard gt 0) and ($flaky_pastry gt 0)>>\u000a[[Make plain tart|plain tart]]<<else>>\u000aMake plain tart (need ingredients)<<endif>><<endif>><<if $plain_cream_puff_recipe is true>><<if ($custard gt 0) and ($sweet_bun gt 0)>>\u000a[[Make plain cream puff|plain cream puff]]<<else>>\u000aMake plain cream puff (need ingredients)<<endif>><<endif>><<if $macaron_recipe is true>><<if ($meringue gt 0) and ($glazed_nuts gt 0)>>\u000a[[Make macaron|macaron]]<<else>>\u000aMake macaron (need ingredients)<<endif>><<endif>><<if $brittle_recipe is true>><<if ($plain_caramel gt 0) and ($glazed_nuts gt 0)>>\u000a[[Make brittle|brittle]]<<else>>\u000aMake brittle (need ingredients)<<endif>><<endif>><<if $daifuku_recipe is true>><<if ($preserves gt 0) and ($mochi gt 0)>>\u000a[[Make daifuku|daifuku]]<<else>>\u000aMake daifuku (need ingredients)<<endif>><<endif>><<if $mochi_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($mochi gt 0)>>\u000a[[Make mochi ice cream|mochi ice cream]]<<else>>\u000aMake mochi ice cream (need ingredients)<<endif>><<endif>><<if $glazed_doughnut_recipe is true>><<if ($sweet_bun gt 0) and ($simple_candy gt 0)>>\u000a[[Make glazed doughnut|glazed doughnut]]<<else>>\u000aMake glazed doughnut (need ingredients)<<endif>><<endif>><<if $anpan_recipe is true>><<if ($sweet_bun gt 0) and ($preserves gt 0)>>\u000a[[Make anpan|anpan]]<<else>>\u000aMake anpan (need ingredients)<<endif>><<endif>><<if $chocolate_cornet_recipe is true>><<if ($sweet_bun gt 0) and ($chocolate gt 0)>>\u000a[[Make chocolate cornet|chocolate cornet]]<<else>>\u000aMake chocolate cornet (need ingredients)<<endif>><<endif>><<if $baklava_recipe is true>><<if ($flaky_pastry gt 0) and ($glazed_nuts gt 0)>>\u000a[[Make baklava|baklava]]<<else>>\u000aMake baklava (need ingredients)<<endif>><<endif>><<if $creme_brulee_recipe is true>><<if ($plain_custard gt 0) and ($plain_caramel gt 0)>>\u000a[[Make creme brulee|creme brulee]]<<else>>\u000aMake creme brulee (need ingredients)<<endif>><<endif>><<if $layer_cake_recipe is true>><<if ($sheet_cake gt 0) and ($plain_custard gt 0)>>\u000a[[Make layer cake|layer cake]]<<else>>\u000aMake layer cake (need ingredients)<<endif>><<endif>><<if $fruit_cake_recipe is true>><<if ($sheet_cake gt 0) and ($preserves gt 0)>>\u000a[[Make fruit cake|fruit cake]]<<else>>\u000aMake fruit cake (need ingredients)<<endif>><<endif>><<if $chocolate_custard_recipe is true>><<if ($plain_custard gt 0) and ($chocolate gt 0)>>\u000a[[Make chocolate custard|chocolate custard]]<<else>>\u000aMake chocolate custard (need ingredients)<<endif>><<endif>><<if $chocolate_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($chocolate gt 0)>>\u000a[[Make chocolate ice cream|chocolate ice cream]]<<else>>\u000aMake chocolate ice cream (need ingredients)<<endif>><<endif>><<if $coffee_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($coffee gt 0)>>\u000a[[Make coffee ice cream|coffee ice cream]]<<else>>\u000aMake coffee ice cream (need ingredients)<<endif>><<endif>><<if $caramel_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($plain_caramel gt 0)>>\u000a[[Make caramel ice cream|caramel ice cream]]<<else>>\u000aMake caramel ice cream (need ingredients)<<endif>><<endif>><<if $chocolate_caramels_recipe is true>><<if ($chocolate gt 0) and ($plain_caramel gt 0)>>\u000a[[Make chocolate chip cookies|chocolate chip cookies]]<<else>>\u000aMake chocolate chip cookies (need ingredients)<<endif>><<endif>><<if $chocolate_caramels_recipe is true>><<if ($chocolate gt 0) and ($plain_caramel gt 0)>>\u000a[[Make chocolate caramels|chocolate caramels]]<<else>>Make chocolate caramels (need ingredients)<<endif>><<endif>><<if $cooking gte 3>><<if $nothing_new is false>><<if $chocolate_recipe is false>>\u000a\u000a</div>
+V<div class="recipes">[[sugar cookies|sugar cookies]]<<if $chocolate_recipe is true>>\u000a[[chocolate|chocolate]]<<endif>><<if $plain_caramel_recipe is true>>\u000a[[plain caramel|plain caramel]]<<endif>><<if $plain_custard_recipe is true>>\u000a[[plain custard|plain custard]]<<endif>><<if $simple_candy_recipe is true>>\u000a[[simple candy|simple candy]]<<endif>><<if $sheet_cake_recipe is true>>\u000a[[sheet cake|sheet cake]]<<endif>><<if $sweet_bun_recipe is true>>\u000a[[sweet bun|sweet bun]]<<endif>><<if $flaky_pastry_recipe is true>>\u000a[[flaky pastry|flaky pastry]]<<endif>><<if $glazed_nuts_recipe is true>>\u000a[[glazed nuts|glazed nuts]]<<endif>><<if $mochi_recipe is true>>\u000a[[mochi|mochi]]<<endif>><<if $plain_ice_cream_recipe is true>>\u000a[[plain ice cream|plain ice cream]]<<endif>><<if $meringue_recipe is true>>\u000a[[meringue|meringue]]<<endif>><<if $coffee_recipe is true>>\u000a[[coffee|coffee]]<<endif>><<if $preserves_recupe is true>>\u000a[[preserves|preserves]]<<endif>><<if $chocolate_chip_cookies_recipe is true>><<if ($chocolate gt 0) and ($sugar_cookies gt 0)>>\u000a[[chocolate chip cookies|chocolate chip cookies]]<<else>>\u000achocolate chip cookies (need ingredients)<<endif>><<endif>><<if $fruit_candy_recipe is true>><<if ($simple_candy gt 0) and ($preserves gt 0)>>\u000a[[fruit candy|fruit candy]]<<else>>\u000afruit candy (need ingredients)<<endif>><<endif>><<if $plain_tart_recipe is true>><<if ($plain_custard gt 0) and ($flaky_pastry gt 0)>>\u000a[[plain tart|plain tart]]<<else>>\u000aplain tart (need ingredients)<<endif>><<endif>><<if $plain_cream_puff_recipe is true>><<if ($custard gt 0) and ($sweet_bun gt 0)>>\u000a[[plain cream puff|plain cream puff]]<<else>>\u000aplain cream puff (need ingredients)<<endif>><<endif>><<if $macaron_recipe is true>><<if ($meringue gt 0) and ($glazed_nuts gt 0)>>\u000a[[macaron|macaron]]<<else>>\u000amacaron (need ingredients)<<endif>><<endif>><<if $brittle_recipe is true>><<if ($plain_caramel gt 0) and ($glazed_nuts gt 0)>>\u000a[[brittle|brittle]]<<else>>\u000abrittle (need ingredients)<<endif>><<endif>><<if $daifuku_recipe is true>><<if ($preserves gt 0) and ($mochi gt 0)>>\u000a[[daifuku|daifuku]]<<else>>\u000adaifuku (need ingredients)<<endif>><<endif>><<if $mochi_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($mochi gt 0)>>\u000a[[mochi ice cream|mochi ice cream]]<<else>>\u000amochi ice cream (need ingredients)<<endif>><<endif>><<if $glazed_doughnut_recipe is true>><<if ($sweet_bun gt 0) and ($simple_candy gt 0)>>\u000a[[glazed doughnut|glazed doughnut]]<<else>>\u000aglazed doughnut (need ingredients)<<endif>><<endif>><<if $anpan_recipe is true>><<if ($sweet_bun gt 0) and ($preserves gt 0)>>\u000a[[anpan|anpan]]<<else>>\u000aanpan (need ingredients)<<endif>><<endif>><<if $chocolate_cornet_recipe is true>><<if ($sweet_bun gt 0) and ($chocolate gt 0)>>\u000a[[chocolate cornet|chocolate cornet]]<<else>>\u000achocolate cornet (need ingredients)<<endif>><<endif>><<if $baklava_recipe is true>><<if ($flaky_pastry gt 0) and ($glazed_nuts gt 0)>>\u000a[[baklava|baklava]]<<else>>\u000abaklava (need ingredients)<<endif>><<endif>><<if $creme_brulee_recipe is true>><<if ($plain_custard gt 0) and ($plain_caramel gt 0)>>\u000a[[creme brulee|creme brulee]]<<else>>\u000acreme brulee (need ingredients)<<endif>><<endif>><<if $layer_cake_recipe is true>><<if ($sheet_cake gt 0) and ($plain_custard gt 0)>>\u000a[[layer cake|layer cake]]<<else>>\u000alayer cake (need ingredients)<<endif>><<endif>><<if $fruit_cake_recipe is true>><<if ($sheet_cake gt 0) and ($preserves gt 0)>>\u000a[[fruit cake|fruit cake]]<<else>>\u000afruit cake (need ingredients)<<endif>><<endif>><<if $chocolate_custard_recipe is true>><<if ($plain_custard gt 0) and ($chocolate gt 0)>>\u000a[[chocolate custard|chocolate custard]]<<else>>\u000achocolate custard (need ingredients)<<endif>><<endif>><<if $chocolate_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($chocolate gt 0)>>\u000a[[chocolate ice cream|chocolate ice cream]]<<else>>\u000achocolate ice cream (need ingredients)<<endif>><<endif>><<if $coffee_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($coffee gt 0)>>\u000a[[coffee ice cream|coffee ice cream]]<<else>>\u000acoffee ice cream (need ingredients)<<endif>><<endif>><<if $caramel_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($plain_caramel gt 0)>>\u000a[[caramel ice cream|caramel ice cream]]<<else>>\u000acaramel ice cream (need ingredients)<<endif>><<endif>><<if $chocolate_caramels_recipe is true>><<if ($chocolate gt 0) and ($plain_caramel gt 0)>>\u000a[[chocolate chip cookies|chocolate chip cookies]]<<else>>\u000achocolate chip cookies (need ingredients)<<endif>><<endif>><<if $chocolate_caramels_recipe is true>><<if ($chocolate gt 0) and ($plain_caramel gt 0)>>\u000a[[chocolate caramels|chocolate caramels]]<<else>>chocolate caramels (need ingredients)<<endif>><<endif>></div>
 p885
 sg23
 Vrecipes
@@ -2886,9 +2886,9 @@ g26
 ((I2015
 I8
 I23
-I21
-I44
-I15
+I23
+I9
+I51
 I6
 I235
 I1
@@ -2913,10 +2913,110 @@ tp892
 (dp893
 tp894
 Rp895
+sbsa(dp896
+g14
+I00
+sg15
+(lp897
+F878.0
+aF295.0
+asg17
+(itiddlywiki
+Tiddler
+p898
+(dp899
+g21
+VYou decide to try combining elements from different recipes... maybe you can make something new, and a little more intense.<<if $mixing.length gt 0>>\u000a\u000aYou are going to try mixing your recipe<<if $mixing.length gt 1>>s<<endif>> for [[<<$mixing[0]>>|experiment][$mixing.shift()]]<<if $mixing.length lt 2>> with something else.<<else>> and [[<<$mixing[1]>>|experiment][$mixing.pop()]].\u000a\u000a[[Experiment...|tier2experiment2]]<<endif>><<endif>>\u000a\u000a<<if $mixing.length neq 2>><<if $mixing.length is 0>>You think about the recipes you know, and decide to start with...<<else if $mixing.length is 1>>You think about the recipes you know and decide to add...<<endif>>\u000a<<if $mixing.indexOf("sugar cookies") lt 0>><<if $sugar_cookies gt 0>>\u000a[[Sugar cookies.|experiment][$mixing.push("sugar cookies")]]<<endif>><<endif>><<if $mixing.indexOf("chocolate") lt 0>><<if $chocolate gt 0>>\u000a[[Chocolate.|experiment][$mixing.push("chocolate")]]<<endif>><<endif>><<if $mixing.indexOf("plain caramel") lt 0>><<if $plain_caramel gt 0>>\u000a[[Plain caramel.|experiment][$mixing.push("plain caramel")]]<<endif>><<endif>><<if $mixing.indexOf("simple candy") lt 0>><<if $simple_candy gt 0>>\u000a[[Simple candy.|experiment][$mixing.push("simple candy")]]<<endif>><<endif>><<if $mixing.indexOf("sheet cake") lt 0>><<if $sheet_cake gt 0>>\u000a[[Sheet cake.|experiment][$mixing.push("sheet cake")]]<<endif>><<endif>><<if $mixing.indexOf("sweet bun") lt 0>><<if $sweet_bun gt 0>>\u000a[[Sweet bun.|experiment][$mixing.push("sweet bun")]]<<endif>><<endif>><<if $mixing.indexOf("flaky pastry") lt 0>><<if $flaky_pastry gt 0>>\u000a[[Flaky pastry.|experiment][$mixing.push("flaky pastry")]]<<endif>><<endif>><<if $mixing.indexOf("glazed nuts") lt 0>><<if $glazed_nuts gt 0>>\u000a[[Glazed nuts.|experiment][$mixing.push("glazed nuts")]]<<endif>><<endif>><<if $mixing.indexOf("mochi") lt 0>><<if $mochi gt 0>>\u000a[[Mochi.|experiment][$mixing.push("mochi")]]<<endif>><<endif>><<if $mixing.indexOf("plain ice cream") lt 0>><<if $plain_ice_cream gt 0>>\u000a[[Plain ice cream.|experiment][$mixing.push("plain ice cream")]]<<endif>><<endif>><<if $mixing.indexOf("meringue") lt 0>><<if $meringue gt 0>>\u000a[[Meringue.|experiment][$mixing.push("meringue")]]<<endif>><<endif>><<if $mixing.indexOf("coffee") lt 0>><<if $coffee gt 0>>\u000a[[Coffee.|experiment][$mixing.push("coffee")]]<<endif>>\u000a<<endif>><<if $mixing.indexOf("preserves") lt 0>><<if $preserves gt 0>>\u000a[[Preserves.|experiment][$mixing.push("preserves")]]<<endif>><<endif>><<endif>>\u000a
+p900
+sg23
+Vtier2experiment
+p901
+sg25
+g26
+((I2015
+I8
+I23
+I23
+I47
+I28
+I6
+I235
+I1
+tp902
+(dp903
+tp904
+Rp905
+sg31
+(lp906
+sg34
+g26
+((I2015
+I8
+I23
+I23
+I36
+I16
+I6
+I235
+I1
+tp907
+(dp908
+tp909
+Rp910
+sbsa(dp911
+g14
+I00
+sg15
+(lp912
+F874.25
+aF425.0
+asg17
+(itiddlywiki
+Tiddler
+p913
+(dp914
+g21
+V
+p915
+sg23
+Vtier2experiment2
+p916
+sg25
+g26
+((I2015
+I8
+I23
+I23
+I47
+I55
+I6
+I235
+I1
+tp917
+(dp918
+tp919
+Rp920
+sg31
+(lp921
+sg34
+g26
+((I2015
+I8
+I23
+I23
+I47
+I43
+I6
+I235
+I1
+tp922
+(dp923
+tp924
+Rp925
 sbsasS'scale'
-p896
+p926
 F0.8
 sS'snapping'
-p897
+p927
 I00
 ss.
