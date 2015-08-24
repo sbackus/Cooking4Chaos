@@ -5,7 +5,7 @@ S''
 p2
 sS'saveDestination'
 p3
-VC:\u005cUsers\u005cDave\u005cDocuments\u005cGitHub\u005cCooking4Chaos\u005cact 3 story.tws
+S'C:\\Users\\Dave\\Documents\\GitHub\\Cooking4Chaos\\act 3 story.tws'
 p4
 sS'metadata'
 p5
@@ -23,7 +23,7 @@ p11
 (dp13
 S'selected'
 p14
-I00
+I01
 sS'pos'
 p15
 (lp16
@@ -37,7 +37,7 @@ p18
 (dp20
 S'text'
 p21
-V<<timedreplace 4s>>Your landlady is waiting for you outside your building. She's grinning; her teeth are small, sharp, and brilliant white. \u000a\u000a<<gains>>//I have a surprise for you,// she says. \u000a\u000a<<becomes>>You force an impatient smile. You know exactly what you're going to make tonight... "Yes?"\u000a\u000a<<gains>>She laughs. //Oh, don't worry, I won't keep you. I know you're eager to get home. Get to work.// \u000a\u000a<<gainss>>//You know, I just love a good eclair. It's really just a cream puff with chocolate. Might be a fun project.//\u000a\u000a<<becomes>>Something about her grin is off-putting. The kitchen is calling you. You hurry past. \u000a\u000a<<gains>>>//You're welcome!// she calls gaily after you. The words seem to chase you up the stairs. \u000a\u000a<<becomes>>Your surprise is a new  oven. It looks old-fashioned - no digital clock, no electronic buttons - but it's also glittering and new. \u000a\u000a<<gains>>You're so happy you want to cry. \u000a<<endtimedreplace>>
+V<<timedreplace 5s>>Your landlady is waiting for you outside your building. She's grinning; her teeth are small, sharp, and brilliant white. \u000a\u000a<<gains>>//I have a surprise for you,// she says. \u000a\u000a<<becomes>>You force an impatient smile. You know exactly what you're going to make tonight... "Yes?"\u000a\u000a<<gains>>She laughs. //Oh, don't worry, I won't keep you. I know you're eager to get home. Get to work.// \u000a\u000a<<gains>>//You know, I just love a good eclair. It's really just a cream puff with chocolate. Might be a fun project.//\u000a\u000a<<becomes>>Something about her grin is off-putting. The kitchen is calling you. You hurry past. \u000a\u000a<<gains>>>//You're welcome!// she calls gaily after you. The words seem to chase you up the stairs. \u000a\u000a<<becomes>>The surprise is your stove. \u000a\u000a<<gains>>It has been cleaned til it shines; some parts have obviously been replaced.\u000a\u000a<<gains>>The labels on dials that control the oven now promise impossibly high temperatures. \u000a\u000a<<gains>>You're so happy you want to cry.<<endtimedreplace>>
 p22
 sS'title'
 p23
@@ -51,9 +51,9 @@ p26
 ((I2015
 I8
 I23
-I21
-I59
-I19
+I22
+I23
+I7
 I6
 I235
 I1
@@ -208,7 +208,7 @@ tp74
 Rp75
 sbsa(dp76
 g14
-I01
+I00
 sg15
 (lp77
 I228

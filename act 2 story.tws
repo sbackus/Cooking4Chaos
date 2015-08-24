@@ -5,7 +5,7 @@ VC:\u005cUsers\u005cDave\u005cDocuments\u005cGitHub\u005cCooking4Chaos\u005cdemo
 p2
 sS'saveDestination'
 p3
-VC:\u005cUsers\u005cDave\u005cDocuments\u005cGitHub\u005cCooking4Chaos\u005cact 2 story.tws
+S'C:\\Users\\Dave\\Documents\\GitHub\\Cooking4Chaos\\act 2 story.tws'
 p4
 sS'metadata'
 p5
@@ -23,7 +23,7 @@ p11
 (dp13
 S'selected'
 p14
-I00
+I01
 sS'pos'
 p15
 (lp16
@@ -37,7 +37,7 @@ p18
 (dp20
 S'text'
 p21
-V<<timedreplace 4s>>You run into your landlady as you enter the building. \u000a\u000a<<gains>>Her small, yellowish eyes move over the bags you're carrying, filled with cooking supplies. \u000a\u000a<<becomes>>//You've just been cooking up a storm, haven't you? Excellent.//\u000a\u000a<<gains>>//You know, I have all sorts of things I'm sure you could use - pots and pans and such.//\u000a\u000a<<gains>>"Oh, you don't..." you start to tell her.\u000a\u000a<<gains>>//Nonsense. I'll be much happier if you have them. Wait here.//\u000a\u000a<<becomes>>She leaves the door to her apartment slightly ajar. You carefully avoid looking inside.\u000a\u000a<<becomes>>Her apartment gives you the shivers. \u000a\u000a<<gains>>It's dim and musty, and she keeps birds in big, ornate antique cages around her living room. \u000a\u000a<<becomes>>At least you assume they're birds. \u000a\u000a<<gains>>You saw something move in one of the cages, once, speaking to her in the doorway.\u000a\u000a<<gains>>Something distinctly not avian.\u000a\u000a<<becomes>>She reappears after a moment with a brown paper bag stuffed with pots, pans, baking supplies, tongs and skewers...\u000a\u000a<<becomes>>//Have fun, dear!// she calls as you disappear up the stairs. \u000a\u000a<<gains>>//Now you can really try something a little different...//<<becomes>>[[Try something a little different...]]<<endtimedreplace>>\u000a\u000a
+V<<timedreplace 5s>>You run into your landlady as you enter the building. \u000a\u000a<<gains>>Her small, yellowish eyes move over your grocery bags. \u000a\u000a<<becomes>>//You've just been cooking up a storm, haven't you? Excellent.//\u000a\u000a<<gains>>//You know, I have all sorts of things I'm sure you could use - pots and pans and such.//\u000a\u000a<<gains>>"Oh, you don't..." you start to tell her.\u000a\u000a<<gains>>//Nonsense. I'll be much happier if you have them. Wait here.//\u000a\u000a<<becomes>>She leaves the door to her apartment slightly ajar. You carefully avoid looking inside.\u000a\u000a<<becomes>>Her apartment gives you the shivers. \u000a\u000a<<gains>>It's dim and musty, and she keeps birds in big, ornate antique cages around her living room. \u000a\u000a<<becomes>>At least you assume they're birds. \u000a\u000a<<gains>>You saw something move in one of the cages, once, speaking to her in the doorway.\u000a\u000a<<gains>>Something distinctly not avian.\u000a\u000a<<becomes>>She reappears after a moment with a brown paper bag stuffed with pots, pans, baking supplies, tongs and skewers...\u000a\u000a<<becomes>>//Have fun, dear!// she calls as you disappear up the stairs. \u000a\u000a<<gains>>//Now you can really try something a little different...//<<becomes>>[[Try something a little different...]]<<endtimedreplace>>\u000a\u000a
 p22
 sS'title'
 p23
@@ -51,9 +51,9 @@ p26
 ((I2015
 I8
 I23
-I21
-I36
-I45
+I22
+I19
+I38
 I6
 I235
 I1
@@ -82,7 +82,7 @@ tp36
 Rp37
 sbsa(dp38
 g14
-I01
+I00
 sg15
 (lp39
 I10
