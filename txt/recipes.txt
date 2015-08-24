@@ -47,5 +47,4 @@ Chocolate Tart = Plain Tart + Chocolate
 Fruit Tart = Plain Tart + Preserves
 Nutty Roca = Brittle + Chocolate
 Ice Cream Sandwich = Chocolate Cookie + Plain Ice Cream
-Cookie Sundae = Any Cookie + Ice Cream combo except above
 Fancy Anpan = Anpan + Plain Custard
