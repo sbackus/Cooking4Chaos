@@ -1,7 +1,7 @@
 (dp0
 S'buildDestination'
 p1
-S''
+V/Users/sambackus/Code/bakery/index.html
 p2
 sS'saveDestination'
 p3
@@ -23,7 +23,7 @@ p11
 (dp13
 S'selected'
 p14
-I01
+I00
 sS'pos'
 p15
 (lp16
@@ -167,7 +167,7 @@ Tiddler
 p62
 (dp63
 g21
-V<<if $crone is 0>><<if $prologue is 1>>Cooking is surprisingly fun. \u000a\u000aYour mind is on mixing and stirring and measuring and timing. \u000a\u000aNot on all your problems.<<else if $prologue is 2>>You think you know what you did wrong yesterday.<<else if $prologue is 3>>You want to be enjoying this, but... Why can't you make these cookies turn out right?<<endif>>\u000a\u000a<<display prologue cooldown>>\u000a<<else>><<set $sugar_cookies += 1>><<if $prologue lt 4>><<set $sugar_cookies_made to true>><<set $prologue += 1>>You like the new spoon. Its weight feels good in your hand as you mix the ingredients. It makes you feel like you're good at this.<<else>><<better>><<endif>>\u000a<<if $sugar_cookies gt 2>> \u000a<<set $nothing_new to false>>\u000a<<endif>>\u000a<<set $show_image to "plain_cookies">>\u000a<<display cooldown>>\u000a<<endif>>\u000a
+V<<if $crone is 0>><<if $prologue is 1>>Cooking is surprisingly fun. \u000a\u000aYour mind is on mixing and stirring and measuring and timing. \u000a\u000aNot on all your problems.<<else if $prologue is 2>>You think you know what you did wrong yesterday.<<else if $prologue is 3>>You want to be enjoying this, but... Why can't you make these cookies turn out right?<<endif>>\u000a\u000a<<display prologue cooldown>>\u000a<<else>><<set $sugar_cookies += 1>><<if $prologue lt 4>><<set $sugar_cookies_made to true>>You like the new spoon. Its weight feels good in your hand as you mix the ingredients. It makes you feel like you're good at this.<<else>><<better>><<endif>>\u000a<<if $sugar_cookies gt 2>> \u000a<<set $nothing_new to false>>\u000a<<endif>>\u000a<<set $show_image to "plain_cookies">>\u000a<<display cooldown>>\u000a<<endif>>\u000a
 p64
 sg23
 Vsugar cookies
@@ -178,8 +178,8 @@ g26
 I8
 I24
 I21
-I30
-I10
+I55
+I15
 I0
 I236
 I1
@@ -2675,7 +2675,7 @@ Tiddler
 p816
 (dp817
 g21
-V<<timedreplace 1s>>6<<becomes>>5<<becomes>>4<<becomes>>3<<becomes>>2<<becomes>>1<<becomes>><<if $prologue is 1>>But the cookies are bland, and you're disappointed.\u000a\u000aMaybe you can do better?<<else if $prologue is 2>>But this time the cookies are overdone. \u000a\u000aYou eat one, unenthusiastic.<<else>>You screwed something up. You have no idea what.\u000a\u000aYou shouldn't be as upset as you are. \u000a\u000aBut for some reason this is really hard.<<endif>><<timedgoto "Start" 3s>><<endtimedreplace>>
+V<<timedreplace 1s>>6<<becomes>>5<<becomes>>4<<becomes>>3<<becomes>>2<<becomes>>1<<becomes>><<if $prologue is 1>>But the cookies are bland, and you're disappointed.\u000a\u000aMaybe you can do better?<<timedgoto "Start" 3s>><<else if $prologue is 2>>But this time the cookies are overdone. \u000a\u000aYou eat one, unenthusiastic.<<timedgoto "Start" 3s>><<else>>You screwed something up. You have no idea what.\u000a\u000aYou shouldn't be as upset as you are. \u000a\u000aBut for some reason this is really hard.<<timedgoto "Start" 5s>><<endif>><<endtimedreplace>>
 p818
 sg23
 Vprologue cooldown
@@ -2686,8 +2686,8 @@ g26
 I8
 I24
 I21
-I35
-I40
+I56
+I11
 I0
 I236
 I1
@@ -2725,7 +2725,7 @@ Tiddler
 p831
 (dp832
 g21
-V<<if $prologue lt 3>>It's <<$weekday>> night. You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<if $prologue is 0>><<set $prologue += 1>>Coming home tonight, you felt so stressed out you decided to try something new. \u000a\u000aYou stopped by the grocery store, and bought supplies for cookies.\u000a\u000a[[Make sugar cookies|sugar cookies]]<<else if $prologue is 1>><<set $prologue += 1>>You come home with more baking supplies, and throw out yesterday's cookies.\u000a\u000aYou're eager to try again. \u000a\u000a[[Make sugar cookies|sugar cookies]]<<else if $prologue is 2>><<set $prologue += 1>>You won't give up. You feel like you can't. You bring home more baking supplies. \u000a\u000a[[Make sugar cookies|sugar cookies]]<<endif>><<else>><<set $crone to 1>><<timedreplace 4s>>There's a note on your door, from your landlady downstairs.<<becomes>>The note says\u000a\u000a//Did I smell you baking cookies last night?//<<gains>>\u000a\u000a//How nice - cooking is a lovely hobby.//<<gains>>\u000a\u000a//I thought you could use this...//<<becomes>>There's an old wooden spoon laid outside the door, resting on a piece of brown paper.<<gains>>\u000a\u000aIt's not new - in fact it's well-loved - but it feels solid in your hand. Reliable.<<becomes>>Maybe you'll give this one last try...<<gains>>\u000a\u000a[[Make sugar cookies|sugar cookies]]\u000a<<endtimedreplace>><<endif>>\u000a\u000a<<display inventory>>\u000a<<display recipes>>
+V<<if $prologue lt 3>>It's <<$weekday>> night. You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<if $prologue is 0>><<set $prologue += 1>>Coming home tonight, you felt so stressed out you decided to try something new. \u000a\u000aYou stopped by the grocery store, and bought supplies for cookies.\u000a\u000a[[Make sugar cookies|sugar cookies]]<<else if $prologue is 1>><<set $prologue += 1>>You come home with more baking supplies, and throw out yesterday's cookies.\u000a\u000aYou're eager to try again. \u000a\u000a[[Make sugar cookies|sugar cookies]]<<else if $prologue is 2>><<set $prologue += 1>>You won't give up. You feel like you can't. You bring home more baking supplies. \u000a\u000a[[Make sugar cookies|sugar cookies]]<<endif>><<else>><<set $crone to 1>><<timedreplace 4s>>There's a note on your door, from your landlady downstairs.<<becomes>>The note says\u000a\u000a//Did I smell you baking cookies last night?//<<gains>>\u000a\u000a//How nice - cooking is a lovely hobby.//<<gains>>\u000a\u000a//I thought you could use this...//<<becomes>>There's an old wooden spoon laid outside the door, resting on a piece of brown paper.<<gains>>\u000a\u000aIt's not new - in fact it's well-loved - but it feels solid in your hand. Reliable.<<becomes>>Maybe you'll give this one last try...<<gains>>\u000a\u000a[[Make sugar cookies|sugar cookies]]\u000a<<endtimedreplace>><<endif>>
 p833
 sg23
 Vprologue
@@ -2735,9 +2735,9 @@ g26
 ((I2015
 I8
 I24
-I18
-I51
-I17
+I21
+I55
+I26
 I0
 I236
 I1
@@ -3566,7 +3566,7 @@ tp1083
 Rp1084
 sbsa(dp1085
 g14
-I00
+I01
 sg15
 (lp1086
 F634.1666666666666
@@ -3577,7 +3577,7 @@ Tiddler
 p1087
 (dp1088
 g21
-V<div class = "recipes">[[sugar cookies|sugar cookies]]<<if $chocolate_recipe is true>>\u000a[[chocolate|chocolate]]<<endif>><<if $plain_caramel_recipe is true>>\u000a[[plain caramel|plain caramel]]<<endif>><<if $plain_custard_recipe is true>>\u000a[[plain custard|plain custard]]<<endif>><<if $simple_candy_recipe is true>>\u000a[[simple candy|simple candy]]<<endif>><<if $sheet_cake_recipe is true>>\u000a[[sheet cake|sheet cake]]<<endif>><<if $sweet_bun_recipe is true>>\u000a[[sweet bun|sweet bun]]<<endif>><<if $marzipan_recipe is true>>\u000a[[marzipan|Marzipan]]<<endif>><<if $flaky_pastry_recipe is true>>\u000a[[flaky pastry|flaky pastry]]<<endif>><<if $glazed_nuts_recipe is true>>\u000a[[glazed nuts|glazed nuts]]<<endif>><<if $mochi_recipe is true>>\u000a[[mochi|mochi]]<<endif>><<if $plain_ice_cream_recipe is true>>\u000a[[plain ice cream|plain ice cream]]<<endif>><<if $meringue_recipe is true>>\u000a[[meringue|meringue]]<<endif>><<if $coffee_recipe is true>>\u000a[[coffee|coffee]]<<endif>><<if $preserves_recipe is true>>\u000a[[preserves|preserves]]<<endif>><<if $chocolate_chip_cookies_recipe is true>><<if ($chocolate gt 0) and ($sugar_cookies gt 0)>>\u000a[[chocolate chip cookies|chocolate chip cookies]]<<else>>\u000achocolate chip cookies<<endif>><<endif>><<if $fruit_candy_recipe is true>><<if ($simple_candy gt 0) and ($preserves gt 0)>>\u000a[[fruit candy|fruit candy]]<<else>>\u000afruit candy<<endif>><<endif>><<if $plain_tart_recipe is true>><<if ($plain_custard gt 0) and ($flaky_pastry gt 0)>>\u000a[[plain tart|plain tart]]<<else>>\u000aplain tart<<endif>><<endif>><<if $plain_cream_puff_recipe is true>><<if ($custard gt 0) and ($sweet_bun gt 0)>>\u000a[[plain cream puff|plain cream puff]]<<else>>\u000aplain cream puff<<endif>><<endif>><<if $macaron_recipe is true>><<if ($meringue gt 0) and ($glazed_nuts gt 0)>>\u000a[[macaron|macaron]]<<else>>\u000amacaron<<endif>><<endif>><<if $brittle_recipe is true>><<if ($plain_caramel gt 0) and ($glazed_nuts gt 0)>>\u000a[[brittle|brittle]]<<else>>\u000abrittle<<endif>><<endif>><<if $daifuku_recipe is true>><<if ($preserves gt 0) and ($mochi gt 0)>>\u000a[[daifuku|daifuku]]<<else>>\u000adaifuku<<endif>><<endif>><<if $mochi_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($mochi gt 0)>>\u000a[[mochi ice cream|mochi ice cream]]<<else>>\u000amochi ice cream<<endif>><<endif>><<if $glazed_doughnut_recipe is true>><<if ($sweet_bun gt 0) and ($simple_candy gt 0)>>\u000a[[glazed doughnut|glazed doughnut]]<<else>>\u000aglazed doughnut<<endif>><<endif>><<if $anpan_recipe is true>><<if ($sweet_bun gt 0) and ($preserves gt 0)>>\u000a[[anpan|anpan]]<<else>>\u000aanpan<<endif>><<endif>><<if $chocolate_cornet_recipe is true>><<if ($sweet_bun gt 0) and ($chocolate gt 0)>>\u000a[[chocolate cornet|chocolate cornet]]<<else>>\u000achocolate cornet<<endif>><<endif>><<if $baklava_recipe is true>><<if ($flaky_pastry gt 0) and ($glazed_nuts gt 0)>>\u000a[[baklava|baklava]]<<else>>\u000abaklava<<endif>><<endif>><<if $creme_brulee_recipe is true>><<if ($plain_custard gt 0) and ($plain_caramel gt 0)>>\u000a[[creme brulee|creme brulee]]<<else>>\u000acreme brulee<<endif>><<endif>><<if $layer_cake_recipe is true>><<if ($sheet_cake gt 0) and ($plain_custard gt 0)>>\u000a[[layer cake|layer cake]]<<else>>\u000alayer cake<<endif>><<endif>><<if $fruit_cake_recipe is true>><<if ($sheet_cake gt 0) and ($preserves gt 0)>>\u000a[[fruit cake|fruit cake]]<<else>>\u000afruit cake<<endif>><<endif>><<if $chocolate_custard_recipe is true>><<if ($plain_custard gt 0) and ($chocolate gt 0)>>\u000a[[chocolate custard|chocolate custard]]<<else>>\u000achocolate custard<<endif>><<endif>><<if $chocolate_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($chocolate gt 0)>>\u000a[[chocolate ice cream|chocolate ice cream]]<<else>>\u000achocolate ice cream<<endif>><<endif>><<if $coffee_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($coffee gt 0)>>\u000a[[coffee ice cream|coffee ice cream]]<<else>>\u000acoffee ice cream<<endif>><<endif>><<if $caramel_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($plain_caramel gt 0)>>\u000a[[caramel ice cream|caramel ice cream]]<<else>>\u000acaramel ice cream<<endif>><<endif>><<if $chocolate_caramels_recipe is true>><<if ($chocolate gt 0) and ($plain_caramel gt 0)>>\u000a[[chocolate caramels|chocolate caramels]]<<else>>chocolate caramels<<endif>><<endif>><<if $eclair_recipe is true>><<if ($plain_cream_puff gt 0) and ($chocolate gt 0)>>\u000a[[eclair|eclair]]<<else>>\u000aeclair<<endif>><<endif>><<if $tiramisu_recipe is true>><<if ($layer_cake gt 0) and ($coffee gt 0)>>\u000a[[tiramisu|tiramisu]]<<else>>\u000atiramisu<<endif>><<endif>><<if $trifle_recipe is true>><<if ($layer_cake gt 0) and ($preserves gt 0)>>\u000a[[trifle|trifle]]<<else>>\u000atrifle<<endif>><<endif>><<if $fancy_cake_recipe is true>><<if ($layer_cake gt 0) and ($marzipan gt 0)>>\u000a[[fancy cake|fancy cake]]<<else>>\u000afancy cake<<endif>><<endif>><<if $holiday_cake_recipe is true>><<if ($fruit_cake gt 0) and ($marzipan gt 0)>>\u000a[[holiday cake|holiday cake]]<<else>>\u000aholiday cake<<endif>><<endif>><<if $chocolate_tart_recipe is true>><<if ($plain_tart gt 0) and ($chocolate gt 0)>>\u000a[[chocolate tart|chocolate tart]]<<else>>\u000achocolate tart<<endif>><<endif>><<if $fruit_tart_recipe is true>><<if ($plain_tart gt 0) and ($preserves gt 0)>>\u000a[[fruit tart|fruit tart]]<<else>>\u000afruit tart<<endif>><<endif>><<if $nutty_roca_recipe is true>><<if ($brittle gt 0) and ($chocolate gt 0)>>\u000a[[nutty roca|nutty roca]]<<else>>\u000anutty roca<<endif>><<endif>><<if $ice_cream_sandwich_recipe is true>><<if ($chocolate_cookie gt 0) and ($plain_ice_cream gt 0)>>\u000a[[ice cream sandwich|ice cream sandwich]]<<else>>\u000aice cream sandwich<<endif>><<endif>><<if $fancy_anpan_recipe is true>><<if ($anpan gt 0) and ($plain_custard gt 0)>>\u000a[[fancy anpan|fancy anpan]]<<else>>\u000afancy anpan<<endif>><<endif>></div>
+V<div class = "recipes"><<if $sugar_cookies_recipe>>[[sugar cookies|sugar cookies]]<<endif>><<if $chocolate_recipe is true>>\u000a[[chocolate|chocolate]]<<endif>><<if $plain_caramel_recipe is true>>\u000a[[plain caramel|plain caramel]]<<endif>><<if $plain_custard_recipe is true>>\u000a[[plain custard|plain custard]]<<endif>><<if $simple_candy_recipe is true>>\u000a[[simple candy|simple candy]]<<endif>><<if $sheet_cake_recipe is true>>\u000a[[sheet cake|sheet cake]]<<endif>><<if $sweet_bun_recipe is true>>\u000a[[sweet bun|sweet bun]]<<endif>><<if $marzipan_recipe is true>>\u000a[[marzipan|Marzipan]]<<endif>><<if $flaky_pastry_recipe is true>>\u000a[[flaky pastry|flaky pastry]]<<endif>><<if $glazed_nuts_recipe is true>>\u000a[[glazed nuts|glazed nuts]]<<endif>><<if $mochi_recipe is true>>\u000a[[mochi|mochi]]<<endif>><<if $plain_ice_cream_recipe is true>>\u000a[[plain ice cream|plain ice cream]]<<endif>><<if $meringue_recipe is true>>\u000a[[meringue|meringue]]<<endif>><<if $coffee_recipe is true>>\u000a[[coffee|coffee]]<<endif>><<if $preserves_recipe is true>>\u000a[[preserves|preserves]]<<endif>><<if $chocolate_chip_cookies_recipe is true>><<if ($chocolate gt 0) and ($sugar_cookies gt 0)>>\u000a[[chocolate chip cookies|chocolate chip cookies]]<<else>>\u000achocolate chip cookies<<endif>><<endif>><<if $fruit_candy_recipe is true>><<if ($simple_candy gt 0) and ($preserves gt 0)>>\u000a[[fruit candy|fruit candy]]<<else>>\u000afruit candy<<endif>><<endif>><<if $plain_tart_recipe is true>><<if ($plain_custard gt 0) and ($flaky_pastry gt 0)>>\u000a[[plain tart|plain tart]]<<else>>\u000aplain tart<<endif>><<endif>><<if $plain_cream_puff_recipe is true>><<if ($custard gt 0) and ($sweet_bun gt 0)>>\u000a[[plain cream puff|plain cream puff]]<<else>>\u000aplain cream puff<<endif>><<endif>><<if $macaron_recipe is true>><<if ($meringue gt 0) and ($glazed_nuts gt 0)>>\u000a[[macaron|macaron]]<<else>>\u000amacaron<<endif>><<endif>><<if $brittle_recipe is true>><<if ($plain_caramel gt 0) and ($glazed_nuts gt 0)>>\u000a[[brittle|brittle]]<<else>>\u000abrittle<<endif>><<endif>><<if $daifuku_recipe is true>><<if ($preserves gt 0) and ($mochi gt 0)>>\u000a[[daifuku|daifuku]]<<else>>\u000adaifuku<<endif>><<endif>><<if $mochi_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($mochi gt 0)>>\u000a[[mochi ice cream|mochi ice cream]]<<else>>\u000amochi ice cream<<endif>><<endif>><<if $glazed_doughnut_recipe is true>><<if ($sweet_bun gt 0) and ($simple_candy gt 0)>>\u000a[[glazed doughnut|glazed doughnut]]<<else>>\u000aglazed doughnut<<endif>><<endif>><<if $anpan_recipe is true>><<if ($sweet_bun gt 0) and ($preserves gt 0)>>\u000a[[anpan|anpan]]<<else>>\u000aanpan<<endif>><<endif>><<if $chocolate_cornet_recipe is true>><<if ($sweet_bun gt 0) and ($chocolate gt 0)>>\u000a[[chocolate cornet|chocolate cornet]]<<else>>\u000achocolate cornet<<endif>><<endif>><<if $baklava_recipe is true>><<if ($flaky_pastry gt 0) and ($glazed_nuts gt 0)>>\u000a[[baklava|baklava]]<<else>>\u000abaklava<<endif>><<endif>><<if $creme_brulee_recipe is true>><<if ($plain_custard gt 0) and ($plain_caramel gt 0)>>\u000a[[creme brulee|creme brulee]]<<else>>\u000acreme brulee<<endif>><<endif>><<if $layer_cake_recipe is true>><<if ($sheet_cake gt 0) and ($plain_custard gt 0)>>\u000a[[layer cake|layer cake]]<<else>>\u000alayer cake<<endif>><<endif>><<if $fruit_cake_recipe is true>><<if ($sheet_cake gt 0) and ($preserves gt 0)>>\u000a[[fruit cake|fruit cake]]<<else>>\u000afruit cake<<endif>><<endif>><<if $chocolate_custard_recipe is true>><<if ($plain_custard gt 0) and ($chocolate gt 0)>>\u000a[[chocolate custard|chocolate custard]]<<else>>\u000achocolate custard<<endif>><<endif>><<if $chocolate_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($chocolate gt 0)>>\u000a[[chocolate ice cream|chocolate ice cream]]<<else>>\u000achocolate ice cream<<endif>><<endif>><<if $coffee_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($coffee gt 0)>>\u000a[[coffee ice cream|coffee ice cream]]<<else>>\u000acoffee ice cream<<endif>><<endif>><<if $caramel_ice_cream_recipe is true>><<if ($plain_ice_cream gt 0) and ($plain_caramel gt 0)>>\u000a[[caramel ice cream|caramel ice cream]]<<else>>\u000acaramel ice cream<<endif>><<endif>><<if $chocolate_caramels_recipe is true>><<if ($chocolate gt 0) and ($plain_caramel gt 0)>>\u000a[[chocolate caramels|chocolate caramels]]<<else>>chocolate caramels<<endif>><<endif>><<if $eclair_recipe is true>><<if ($plain_cream_puff gt 0) and ($chocolate gt 0)>>\u000a[[eclair|eclair]]<<else>>\u000aeclair<<endif>><<endif>><<if $tiramisu_recipe is true>><<if ($layer_cake gt 0) and ($coffee gt 0)>>\u000a[[tiramisu|tiramisu]]<<else>>\u000atiramisu<<endif>><<endif>><<if $trifle_recipe is true>><<if ($layer_cake gt 0) and ($preserves gt 0)>>\u000a[[trifle|trifle]]<<else>>\u000atrifle<<endif>><<endif>><<if $fancy_cake_recipe is true>><<if ($layer_cake gt 0) and ($marzipan gt 0)>>\u000a[[fancy cake|fancy cake]]<<else>>\u000afancy cake<<endif>><<endif>><<if $holiday_cake_recipe is true>><<if ($fruit_cake gt 0) and ($marzipan gt 0)>>\u000a[[holiday cake|holiday cake]]<<else>>\u000aholiday cake<<endif>><<endif>><<if $chocolate_tart_recipe is true>><<if ($plain_tart gt 0) and ($chocolate gt 0)>>\u000a[[chocolate tart|chocolate tart]]<<else>>\u000achocolate tart<<endif>><<endif>><<if $fruit_tart_recipe is true>><<if ($plain_tart gt 0) and ($preserves gt 0)>>\u000a[[fruit tart|fruit tart]]<<else>>\u000afruit tart<<endif>><<endif>><<if $nutty_roca_recipe is true>><<if ($brittle gt 0) and ($chocolate gt 0)>>\u000a[[nutty roca|nutty roca]]<<else>>\u000anutty roca<<endif>><<endif>><<if $ice_cream_sandwich_recipe is true>><<if ($chocolate_cookie gt 0) and ($plain_ice_cream gt 0)>>\u000a[[ice cream sandwich|ice cream sandwich]]<<else>>\u000aice cream sandwich<<endif>><<endif>><<if $fancy_anpan_recipe is true>><<if ($anpan gt 0) and ($plain_custard gt 0)>>\u000a[[fancy anpan|fancy anpan]]<<else>>\u000afancy anpan<<endif>><<endif>></div>
 p1089
 sg23
 Vrecipes
@@ -3587,9 +3587,9 @@ g26
 ((I2015
 I8
 I24
-I19
-I47
+I21
 I56
+I49
 I0
 I236
 I1
