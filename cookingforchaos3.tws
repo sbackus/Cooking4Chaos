@@ -5,7 +5,7 @@ S''
 p2
 sS'saveDestination'
 p3
-S'C:\\Users\\StarsLikeDust\\Documents\\GitHub\\Cooking4Chaos\\cookingforchaos3.tws'
+VC:\u005cUsers\u005cDave\u005cDocuments\u005cGitHub\u005cCooking4Chaos\u005ccookingforchaos3.tws
 p4
 sS'metadata'
 p5
@@ -23,7 +23,7 @@ p11
 (dp13
 S'selected'
 p14
-I01
+I00
 sS'pos'
 p15
 (lp16
@@ -37,7 +37,7 @@ p18
 (dp20
 S'text'
 p21
-V<<silently>>\u000a<<messages>>\u000a<<rng>>\u000a<<progress>>\u000a<<if ($crone is 1) and ($tier_1_recipes is 6)>>\u000a<<set $crone to 2>>\u000a<<endif>>\u000a<<if ($crone is 3) and ($tier_2_recipes is 12)>>\u000a<<set $crone to 4>>\u000a<<endif>>\u000a<<if ($crone is 5) and ($tier_3_recipes is 11)>>\u000a<<set $crone to 6>>\u000a<<endif>>\u000a<<set $mixing to []>>\u000a<<set $inventory to []>>\u000a<<day>>\u000a<<endsilently>><<if $crone is 0>><<goto "prologue">><<else if $crone is 2>><<display pots pans>><<else if $crone is 4>><<display oven upgrade>><<else if $crone is 6>><<display the end>><<else>>It's <<$weekday>> night. You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<else>><<if $prologue lt 4>>Last night's cookies are worth saving. You wrap them carefully in plastic.\u000a\u000a<<set $prologue += 1>> <<endif>><<if $crone neq 0>>What will you cook tonight?<<if $nothing_new is false>>\u000a\u000a[[Try something new...|new]]<<endif>><<if $crone gte 3>> \u000a\u000a[[Try something really different...|experiment]]\u000a<<endif>><<if $crone gte 4>> \u000a\u000a[[Try something crazy...|tier2experiment]]\u000a<<endif>>\u000a\u000a<<endif>>\u000a\u000a<<endif>>\u000a\u000a<<if ($crone neq 0) and ($crone neq 2) and ($crone neq 4) and ($crone neq 6)>> <<display recipes>> <<display inventory>> <<endif>>
+V<<silently>>\u000a<<messages>>\u000a<<rng>>\u000a<<progress>>\u000a<<if ($crone is 1) and ($tier_1_recipes is 6)>>\u000a<<set $crone to 2>>\u000a<<endif>>\u000a<<if ($crone is 3) and ($tier_2_recipes is 12)>>\u000a<<set $crone to 4>>\u000a<<endif>>\u000a<<if ($crone is 5) and ($tier_3_recipes is 11)>>\u000a<<set $crone to 6>>\u000a<<endif>>\u000a<<set $mixing to []>>\u000a<<set $inventory to []>>\u000a<<day>>\u000a<<endsilently>><<if $crone is 0>><<goto "prologue">><<else if $crone is 2>><<display pots pans>><<else if $crone is 4>><<display oven upgrade>><<else if $crone is 6>><<display the end>><<else>>It's <<$weekday>> night. You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<else>><<if $prologue lt 4>>Last night's cookies are worth saving. You wrap them carefully in plastic.\u000a\u000a<<set $prologue += 1>> <<endif>><<if $crone neq 0>>What will you cook tonight?<<if $nothing_new is false>>\u000a\u000a[[Try something new...|new]]<<endif>><<if $crone gte 3>> \u000a\u000a[[Try something really different...|experiment]]\u000a<<endif>><<if $crone gte 4>> \u000a\u000a[[Try something crazy...|tier2experiment]]\u000a<<endif>>\u000a\u000a<<endif>>\u000a\u000a<<endif>>\u000a\u000a<<if $james is "hello">> <<display recipes>> <<display inventory>> <<endif>>
 p22
 sS'title'
 p23
@@ -52,8 +52,8 @@ p26
 I8
 I24
 I20
-I3
-I40
+I14
+I10
 I0
 I236
 I1
@@ -156,7 +156,7 @@ sg33
 g58
 sbsa(dp60
 g14
-I00
+I01
 sg15
 (lp61
 F188.0
@@ -361,15 +361,15 @@ g14
 I00
 sg15
 (lp122
-I761
-aI8
+F761.0
+aF8.0
 asg17
 (itiddlywiki
 Tiddler
 p123
 (dp124
 g21
-V<<set $new_message to either("God. What a hard day.","Today was tough.","You need to unwind.", "You feel stressed out.","Your job was bad today.")>><<messagededuper>>
+V<<if $crone lt 2>><<set $new_message to either("God. What a hard day.","Today was tough.","You need to unwind.", "You feel stressed out.","Your job was bad today.")>><<else if $crone lt 4>><<set $new_message to either("Today was murder.","Today was utterly unbearable.","You counted the minutes all day today.","Yes, yes, yes, you're almost home.","The world is loud and chaotic and boring. You dreamed of your kitchen all day.","You had a terrible headache all day today. You know that cooking will make you feel better...","You sprint up the stairs to your apartment. The kitchen is calling you...")>><<else>><<set $new_message to either("You resent every moment you spent away from your kitchen today, and everyone who contributed to the time you spent away will pay.","You find you can't remember anything that happened today. But there's no time to worry about that: this is your only time to cook.","You feel a terrible pain in your belly. It's like your organs are twisted into knots. But you don't have time to think about that now. This is your chance to cook.","Your shoes no longer fit, and walking up the stairs is painful. Did you always have six toes? No matter.")>><<endif>><<messagededuper>>
 p125
 sg23
 Vmessages
@@ -379,9 +379,9 @@ g26
 ((I2015
 I8
 I24
-I15
 I20
-I38
+I29
+I22
 I0
 I236
 I1
@@ -663,8 +663,8 @@ g14
 I00
 sg15
 (lp213
-F1132.833333333333
-aF276.00000000000006
+F1142.833333333333
+aF289.33333333333337
 asg17
 (itiddlywiki
 Tiddler
@@ -863,15 +863,15 @@ g14
 I00
 sg15
 (lp273
-I628
-aI150
+F628.0
+aF150.0
 asg17
 (itiddlywiki
 Tiddler
 p274
 (dp275
 g21
-VCooking always makes you feel better.
+V<<if $crone lt 2>><<set $better to either("Cooking always makes you feel better.","You feel better when you're cooking.","You're so glad you took up cooking.","Cooking is so rewarding.","Finally. You've been looking forward to cooking all day.","Cooking is your one and only pleasure.","You feel visceral relief when you pick up your new favorite baking spoon.")>><<else if $crone lt 4>><<set $better to either("Cooking is so wonderful. So, so wonderful.","You grin over your work. You're getting good at this.","Cooking is a welcome relief.","Cooking. Cooking cooking cooking.","It's going to be perfect. You laugh from sheer satisfaction.","The phone rings. You're annoyed Don't they know you're cooking?!","You giggle uncontrollably at the sheer joy of cooking."<<else>><<set $better to either("You could cook something really special if those idiots at work would stop calling you away...","You are grim over your work tonight. Perfect. It has to be perfect.","The phone rings as you're measuring flour, sending you into a rage. How are you supposed to concentrate?","You add too much of one ingredient. The measuring cup betrayed you. You fling it from the window.","The ingredients are alive. The dish is alive. This is not a metaphor. This is wisdom.","A true artist lives not for the work, not for the reward. For the dish. The dish.","Perfect. It has to be perfect. You have to be perfect...")>><<endif>><<print $better>>\u000a
 p276
 sg23
 Vbetter
@@ -881,9 +881,9 @@ g26
 ((I2015
 I8
 I24
-I15
 I20
-I26
+I22
+I59
 I0
 I236
 I1
