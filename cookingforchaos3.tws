@@ -23,7 +23,7 @@ p11
 (dp13
 S'selected'
 p14
-I01
+I00
 sS'pos'
 p15
 (lp16
@@ -4439,7 +4439,7 @@ tp1338
 Rp1339
 sbsa(dp1340
 g14
-I00
+I01
 sg15
 (lp1341
 F1401.6666666666665
@@ -4450,7 +4450,7 @@ Tiddler
 p1342
 (dp1343
 g21
-VPlaceholder.
+V\u000aArt\u000a[[Suzi Curran|https://twitter.com/suzicurran]]\u000a[[Tony Eng|https://www.facebook.com/ynotart2]]   \u000a\u000aProgramming\u000a[[Sam Backus|https://twitter/com/sambackus]]\u000a[[Dave Rogers|http://davecity.be/]]\u000a[[James Curran|http://static5.businessinsider.com/image/511d104a69bedd1f7c000012/grumpy-cat-definitely-did-not-make-100-million.jpg]]\u000a\u000aStory\u000a[[Suzi Curran|https://twitter.com/suzicurran]]\u000a[[Tony Eng|https://www.facebook.com/ynotart2]] \u000a[[Dave Rogers|http://davecity.be/]]\u000a[[Andrew Lynch|https://www.linkedin.com/in/andrewjohnlynch]]\u000a\u000aCustom Twine Macros\u000a[[Astrid Bin|https://www.glorioustrainwrecks.com/node/5108]]\u000a[[Stefano Russo|https://www.glorioustrainwrecks.com/node/5108]]\u000a[[Leon Arnott|http://twinery.org/wiki/resources]]\u000a\u000a[[Play again|Start]]
 p1344
 sg23
 Vcredits
@@ -4460,9 +4460,9 @@ g26
 ((I2015
 I8
 I24
-I18
-I37
-I19
+I21
+I43
+I29
 I0
 I236
 I1
