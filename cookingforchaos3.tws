@@ -23,7 +23,7 @@ p11
 (dp13
 S'selected'
 p14
-I00
+I01
 sS'pos'
 p15
 (lp16
@@ -37,7 +37,7 @@ p18
 (dp20
 S'text'
 p21
-V<<silently>>\u000a<<messages>>\u000a<<rng>>\u000a<<progress>>\u000a<<if ($crone is 1) and ($tier_1_recipes is 6)>>\u000a<<set $crone to 2>>\u000a<<endif>>\u000a<<if ($crone is 3) and ($tier_2_recipes is 12)>>\u000a<<set $crone to 4>>\u000a<<endif>>\u000a<<if ($crone is 5) and ($tier_3_recipes is 11)>>\u000a<<set $crone to 6>>\u000a<<endif>>\u000a<<set $mixing to []>>\u000a<<set $inventory to []>>\u000a<<day>>\u000a<<endsilently>><<if $crone is 0>><<goto "prologue">><<else if $crone is 2>><<display pots pans>><<else if $crone is 4>><<display oven upgrade>><<else if $crone is 6>><<display the end>><<else>>It's <<$weekday>> night. You arrive home from work.\u000a\u000a<<$message>> \u000a\u000a<<if $prologue lt 4>>Last night's cookies are worth saving. You wrap them carefully in plastic.\u000a\u000a<<set $prologue += 1>> <<endif>><<if $crone neq 0>>What will you cook tonight?<<if $nothing_new is false>>\u000a\u000a[[Try something new...|new]]<<endif>><<if $crone gte 3>> \u000a\u000a[[Try something really different...|experiment]]\u000a<<endif>><<if $crone gte 4>> \u000a\u000a[[Try something crazy...|tier2experiment]]\u000a<<endif>>\u000a\u000a<<endif>>\u000a\u000a<<endif>>\u000a\u000a<<if $james is "hello">> <<display recipes>> <<display inventory>> <<endif>>
+V<<silently>>\u000a<<messages>>\u000a<<rng>>\u000a<<progress>>\u000a<<if ($crone is 1) and ($tier_1_recipes is 6)>>\u000a<<set $crone to 2>>\u000a<<endif>>\u000a<<if ($crone is 3) and ($tier_2_recipes is 12)>>\u000a<<set $crone to 4>>\u000a<<endif>>\u000a<<if ($crone is 5) and ($tier_3_recipes is 11)>>\u000a<<set $crone to 6>>\u000a<<endif>>\u000a<<set $mixing to []>>\u000a<<set $inventory to []>>\u000a<<day>>\u000a<<endsilently>><<if $crone is 0>><<goto "prologue">><<else if $crone is 2>><<display pots pans>><<else if $crone is 4>><<display oven upgrade>><<else if $crone is 6>><<display the end>><<else>>It's <<$weekday>> night. You arrive home from work. <<print $prologue>>\u000a\u000a<<$message>> \u000a\u000a<<if $prologue lt 4>>You ate just a little of last night's cookies, just when they came out of the oven. The rest, you decide, are worth saving. \u000a\u000aYou wrap them carefully in plastic. Now you know the recipe for cookies. But you could probably discover something new...\u000a\u000a<<set $prologue += 1>> <<endif>><<if $crone neq 0>>What will you cook tonight?<<if $nothing_new is false>>\u000a\u000a[[Try something new...|new]]<<endif>><<if $crone gte 3>> \u000a\u000a[[Try something really different...|experiment]]\u000a<<endif>><<if $crone gte 4>> \u000a\u000a[[Try something crazy...|tier2experiment]]\u000a<<endif>>\u000a\u000a<<endif>>\u000a\u000a<<endif>>\u000a\u000a<<display recipes>> <<display inventory>>
 p22
 sS'title'
 p23
@@ -52,8 +52,8 @@ p26
 I8
 I24
 I21
-I17
-I44
+I50
+I45
 I0
 I236
 I1
@@ -4439,7 +4439,7 @@ tp1338
 Rp1339
 sbsa(dp1340
 g14
-I01
+I00
 sg15
 (lp1341
 F1401.6666666666665
